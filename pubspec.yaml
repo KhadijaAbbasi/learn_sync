@@ -1,0 +1,85 @@
+name: learnsync
+description: "Real-time student feedback for teachers and learners."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  intl: any
+  flutter_native_splash: ^2.4.6
+  google_fonts: ^6.3.2
+  firebase_core: ^4.14.0
+  firebase_auth: ^6.6.0
+  cloud_firestore: ^6.9.0
+  cloud_functions: ^6.0.4
+  firebase_storage: ^13.5.0
+  http: ^1.5.0
+  shared_preferences: ^2.5.3
+  file_picker: ^12.1.1
+  open_filex: ^4.7.0
+  url_launcher: ^6.3.2
+  path_provider: ^2.1.5
+  web: ^1.1.1
+  flutter_gemma: ^1.7.0
+  flutter_gemma_mediapipe: ^1.0.5
+  flutter_dotenv: ^6.0.1
+  pdfx: ^2.11.0
+  webview_flutter: ^4.14.1
+  archive: ^4.3.0
+  xml: ^7.0.1
+  pdf: ^3.13.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/splash_logo.png
+  color_dark: "#FFFFFF"
+  image_dark: assets/images/splash_logo.png
+  android_12:
+    color: "#FFFFFF"
+    image: assets/images/splash_logo.png
+    icon_background_color: "#FFFFFF"
+    color_dark: "#FFFFFF"
+    image_dark: assets/images/splash_logo.png
+    icon_background_color_dark: "#FFFFFF"
+  android: true
+  ios: true
+  web: true
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: assets/images/app_icon.png
+  adaptive_icon_background: "#0B2545"
+  adaptive_icon_foreground: assets/images/app_icon_foreground.png
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: assets/images/app_icon.png
+    background_color: "#0B2545"
+    theme_color: "#0B2545"
+  windows:
+    generate: true
+    image_path: assets/images/app_icon.png
+  macos:
+    generate: true
+    image_path: assets/images/app_icon.png

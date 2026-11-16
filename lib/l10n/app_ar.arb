@@ -1,0 +1,1320 @@
+{
+  "@@locale": "ar",
+  "appName": "LEARNsync",
+  "appTagline": "ملاحظات الطلاب في الوقت الفعلي",
+  "welcomeBack": "مرحبًا بعودتك!",
+  "loginSubtitle": "سجّل الدخول للمتابعة إلى حسابك.",
+  "emailOrUsername": "البريد الإلكتروني أو اسم المستخدم",
+  "password": "كلمة المرور",
+  "login": "تسجيل الدخول",
+  "forgotPassword": "هل نسيت كلمة المرور؟",
+  "forgotPasswordTitle": "نسيت كلمة المرور",
+  "forgotPasswordSubtitle": "أدخل البريد الإلكتروني لحسابك. سنرسل رابطًا لإعادة تعيين كلمة المرور.",
+  "sendResetLink": "إرسال رابط إعادة التعيين",
+  "resetEmailSentTitle": "تحقق من بريدك",
+  "resetEmailSentBody": "أرسلنا رابط إعادة تعيين كلمة المرور إلى {email}.",
+  "@resetEmailSentBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "resetEmailSentHint": "افتح الرسالة وعيّن كلمة مرور جديدة ثم عد إلى هنا لتسجيل الدخول.",
+  "accountNotFound": "لا يوجد حساب لهذا البريد الإلكتروني.",
+  "dontHaveAccount": "ليس لديك حساب؟",
+  "signUp": "إنشاء حساب",
+  "otpTitle": "تحقق من بريدك",
+  "otpSubtitle": "أدخل الرمز المكوّن من 6 أرقام الذي أرسلناه إلى {email}.",
+  "@otpSubtitle": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "otpHint": "رمز من 6 أرقام",
+  "otpInvalidLength": "أدخل رمز التحقق المكوّن من 6 أرقام.",
+  "verifyOtp": "تحقق من الرمز",
+  "otpSending": "جارٍ الإرسال...",
+  "resendOtp": "إعادة إرسال الرمز",
+  "otpEmailSent": "أرسلنا رسالة تحقق إلى {email}. تحقق من صندوق الوارد والرسائل غير المرغوب فيها.",
+  "@otpEmailSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "otpResent": "تم إرسال رمز تحقق جديد إلى بريدك.",
+  "userAlreadyExistsTitle": "الحساب موجود بالفعل",
+  "userAlreadyExistsBody": "هذا البريد مسجّل بالفعل. سجّل الدخول، أو استخدم نسيت كلمة المرور لإعادة تعيينها.",
+  "verifyEmailTitle": "تحقق من بريدك",
+  "verifyEmailBody": "افتح رسالة التحقق التي أرسلناها إلى {email}. بعد الضغط على الرابط ستفتح شاشة تسجيل الدخول.",
+  "@verifyEmailBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "waitingForEmailVerification": "بانتظار الضغط على الرابط في بريدك…",
+  "emailVerifiedPleaseLogin": "تم التحقق من البريد. يرجى تسجيل الدخول.",
+  "emailNotVerified": "افتح رسالة التحقق واضغط الرابط أولاً، ثم حاول مرة أخرى.",
+  "createAccount": "أنشئ حسابك",
+  "signUpSubtitle": "سجّل للبدء.",
+  "fullName": "الاسم الكامل",
+  "emailAddress": "البريد الإلكتروني",
+  "iAmA": "أنا...",
+  "teacher": "معلم",
+  "student": "طالب",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "iAgreePrefix": "أوافق على ",
+  "andConjunction": " و",
+  "termsOfUse": "شروط الاستخدام",
+  "privacyPolicy": "سياسة الخصوصية",
+  "alreadyHaveAccount": "لديك حساب بالفعل؟",
+  "backToLogin": "العودة لتسجيل الدخول",
+  "requiredField": "هذا الحقل مطلوب",
+  "invalidEmail": "أدخل بريدًا إلكترونيًا صالحًا",
+  "passwordTooShort": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
+  "passwordRequirements": "استخدم 8 أحرف على الأقل مع حرف كبير وحرف صغير ورقم ورمز خاص.",
+  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
+  "selectRole": "يرجى اختيار الدور",
+  "acceptTerms": "يرجى الموافقة على شروط الاستخدام وسياسة الخصوصية",
+  "loginSuccess": "تم تسجيل الدخول. سيتم ربط الخادم في خطوة لاحقة.",
+  "signupSuccess": "تم إنشاء الحساب. يمكنك الآن تسجيل الدخول.",
+  "termsPlaceholderBody": "ستُضاف شروط الاستخدام الكاملة هنا قبل الإطلاق.",
+  "privacyPlaceholderBody": "ستُضاف سياسة الخصوصية الكاملة هنا قبل الإطلاق.",
+  "ok": "حسنًا",
+  "helloUser": "مرحبًا، {name}",
+  "@helloUser": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "teacherDashboard": "لوحة المعلم",
+  "studentDashboard": "لوحة الطالب",
+  "yourCourses": "المقررات",
+  "addCourse": "إضافة مقرر",
+  "newCourse": "مقرر جديد",
+  "courseName": "اسم المقرر",
+  "deleteCourse": "حذف المقرر",
+  "noCoursesTeacher": "لا توجد مقررات بعد. أضف مقررًا لبدء التدريس.",
+  "noCoursesStudent": "اربط حساب معلمك لعرض المقررات المتاحة.",
+  "liveLecture": "محاضرة مباشرة",
+  "noLiveLecture": "لا توجد محاضرة مباشرة الآن.",
+  "connectTeacher": "الارتباط بالمعلم",
+  "connectTeacherHint": "أدخل بريد معلمك للوصول إلى مقرراته.",
+  "teacherEmail": "بريد المعلم",
+  "connect": "ارتباط",
+  "connectedTo": "مرتبط بـ {name}",
+  "@connectedTo": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "logoutConfirm": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+  "logout": "تسجيل الخروج",
+  "statsCourses": "المقررات",
+  "statsLive": "مباشر",
+  "statsMeetings": "الاجتماعات",
+  "topicsCount": "{count} موضوعات",
+  "@topicsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "startTopicSoon": "سيتم إضافة بدء الموضوع لاحقًا.",
+  "aiPracticeSoon": "سيتم فتح التمرين بالذكاء الاصطناعي من هنا لاحقًا.",
+  "meetingSoon": "سيتم فتح طلبات الاجتماع من هنا لاحقًا.",
+  "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+  "demoHint": "تجريبي: teacher@learnsync.app أو student@learnsync.app  •  Demo@123",
+  "emailInUse": "يوجد حساب بالفعل لهذا البريد الإلكتروني.",
+  "memberId": "المعرف",
+  "teacherMemberId": "معرف المعلم",
+  "studentMemberId": "معرف الطالب",
+  "memberIdInvalid": "استخدم 3 إلى 32 حرفًا أو رقمًا أو شرطة أو شرطة سفلية.",
+  "memberIdTaken": "هذا المعرف مرتبط بالفعل ببريد إلكتروني آخر.",
+  "networkError": "تحقق من اتصال الإنترنت ثم حاول مرة أخرى.",
+  "tooManyRequests": "محاولات كثيرة جدًا. حاول لاحقًا.",
+  "authUnknown": "حدث خطأ. يرجى المحاولة مرة أخرى.",
+  "teacherNotFound": "لم يتم العثور على معلم بهذا الاسم أو البريد.",
+  "teacherHasNoCourses": "لم يُضف معلمك أي مقررات بعد.",
+  "courseSaveFailed": "تعذر حفظ المقرر. حاول مرة أخرى.",
+  "courseDeleteFailed": "تعذر حذف المقرر. حاول مرة أخرى.",
+  "add": "إضافة",
+  "cancel": "إلغاء",
+  "quickActions": "إجراءات سريعة",
+  "aiPractice": "تمرين الذكاء الاصطناعي",
+  "meetTeacher": "لقاء المعلم",
+  "welcomeBackName": "مرحبًا بعودتك، {name}",
+  "@welcomeBackName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "stayUpdated": "ابقَ على اطلاع واستمر في التعلّم!",
+  "currentLiveTopic": "الموضوع المباشر الحالي",
+  "liveBadge": "مباشر",
+  "chapterLabel": "الفصل 2: كثيرات الحدود",
+  "liveTopicTitle": "المعادلات التربيعية",
+  "startedAt": "بدأت الساعة {time}",
+  "@startedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "howWellUnderstood": "ما مدى فهمك لهذا الموضوع؟",
+  "understand100": "100%",
+  "understand80": "80%",
+  "understand60": "60%",
+  "understandBelow50": "أقل من 50%",
+  "understand100Hint": "واضح تمامًا",
+  "understand80Hint": "واضح إلى حد كبير",
+  "understand60Hint": "أحتاج مراجعة",
+  "understandBelow50Hint": "أحتاج مساعدة",
+  "whatNext": "ماذا تريد أن تفعل بعد ذلك؟",
+  "aiPracticeHint": "احصل على أسئلة خاصة بالموضوع.",
+  "startPractice": "ابدأ التمرين",
+  "alreadyPracticed": "تم التمرين",
+  "practiceMore": "تمرّن أكثر",
+  "pastPracticeTitle": "التمارين السابقة",
+  "pastPracticeEmpty": "لا توجد أسئلة تمرين محفوظة لهذه المحاضرة بعد.",
+  "pastPracticeAttemptLabel": "المحاولة {n} · {score}/{total} ({percent}%)",
+  "@pastPracticeAttemptLabel": {
+    "placeholders": {
+      "n": {"type": "int"},
+      "score": {"type": "int"},
+      "total": {"type": "int"},
+      "percent": {"type": "int"}
+    }
+  },
+  "requestMeetingHint": "اطلب دعمًا إضافيًا دون التحدث أمام الصف.",
+  "requestMeeting": "طلب اجتماع",
+  "yourProgress": "تقدّمك",
+  "viewAll": "عرض الكل",
+  "topicsCompleted": "الموضوعات المكتملة",
+  "aiPracticesCompleted": "تمارين الذكاء الاصطناعي",
+  "meetingsRequested": "طلبات الاجتماع",
+  "thisMonth": "هذا الشهر",
+  "navDashboard": "لوحة التحكم",
+  "navLiveTopics": "الموضوعات المباشرة",
+  "navPractice": "التمرين",
+  "navMeetings": "الاجتماعات",
+  "myMeetingRequests": "طلبات الاجتماع الخاصة بي",
+  "meetingRequests": "طلبات الاجتماع",
+  "meetingDetails": "تفاصيل الاجتماع",
+  "createMeetingIntro": "أخبر معلمك بما تحتاج مساعدة فيه. اجعل الطلب قصيرًا وواضحًا.",
+  "selectCourse": "اختر المقرر",
+  "meetingTopicLabel": "الموضوع",
+  "meetingTopicHint": "ما الموضوع الذي تحتاج مساعدة فيه؟",
+  "meetingReasonLabel": "السبب",
+  "meetingReasonHint": "اشرح ما غير واضح أو ما تريد مناقشته.",
+  "sendMeetingRequest": "إرسال الطلب",
+  "meetingRequestSent": "تم إرسال طلب الاجتماع.",
+  "meetingRequestFailed": "تعذر إرسال طلب الاجتماع. حاول مرة أخرى.",
+  "meetingFormIncomplete": "أضف موضوعًا وسببًا قبل الإرسال.",
+  "linkTeacherFirstForMeeting": "اربط حسابك بمعلمك قبل طلب اجتماع.",
+  "noMeetingRequestsYet": "لا توجد طلبات اجتماع بعد",
+  "noMeetingRequestsStudentHint": "عندما تشعر بعدم الوضوح، أرسل طلبًا هادئًا إلى معلمك.",
+  "noMeetingRequestsTeacherHint": "عندما يطلب طالب الدعم، سيظهر طلبه هنا.",
+  "meetingStatusPending": "قيد الانتظار",
+  "meetingStatusAccepted": "مقبول",
+  "meetingStatusDeclined": "مرفوض",
+  "meetingStatusCompleted": "مكتمل",
+  "meetingStatusReschedule": "إعادة جدولة",
+  "meetingScheduledFor": "مجدول في",
+  "teacherNote": "ملاحظة المعلم",
+  "teacherNoteOptional": "ملاحظة للطالب (اختياري)",
+  "meetingPendingHint": "استلم معلمك هذا الطلب وسيرد قريبًا.",
+  "meetingAcceptedHint": "قبل معلمك هذا الاجتماع. راجع الوقت المجدول أعلاه.",
+  "meetingDeclinedHint": "لم يتمكن معلمك من قبول هذا الاجتماع. يمكنك إرسال طلب جديد في أي وقت.",
+  "meetingCompletedHint": "تم تعليم هذا الاجتماع كمكتمل. أحسنت على المتابعة.",
+  "meetingRescheduleHint": "طلبت إعادة الجدولة. سيختار معلمك وقتًا جديدًا.",
+  "meetingNotFound": "تعذر العثور على طلب الاجتماع هذا.",
+  "pendingMeetings": "بانتظار الرد",
+  "allMeetings": "كل الطلبات",
+  "scheduleMeetingPrompt": "اختر وقتًا ثم اقبل أو ارفض.",
+  "chooseMeetingDateTime": "اختر التاريخ والوقت",
+  "chooseNewMeetingDateTime": "اختر تاريخًا ووقتًا جديدين",
+  "chooseMeetingTimeFirst": "اختر تاريخ ووقت الاجتماع أولًا.",
+  "acceptMeeting": "قبول الاجتماع",
+  "declineMeeting": "رفض",
+  "setNewMeetingTime": "تعيين وقت جديد",
+  "studentAskedReschedule": "طلب الطالب إعادة الجدولة. اختر وقتًا جديدًا.",
+  "requestReschedule": "طلب إعادة جدولة",
+  "requestRescheduleHint": "تحتاج وقتًا مختلفًا؟ اطلب من معلمك إعادة الجدولة.",
+  "rescheduleNoteOptional": "لماذا تحتاج وقتًا جديدًا؟ (اختياري)",
+  "rescheduleNoteLabel": "ملاحظة إعادة الجدولة",
+  "rescheduleRequestedToast": "تم إرسال طلب إعادة الجدولة إلى معلمك.",
+  "meetingRescheduledToast": "تم حفظ وقت الاجتماع الجديد.",
+  "markMeetingCompleted": "تعليم كمكتمل",
+  "meetingCompleteAfterSchedule": "يمكنك التعليم كمكتمل فقط بعد الوقت المجدول.",
+  "meetingCompleteAfterScheduleHint": "يُفعَّل الإكمال بعد {time}.",
+  "@meetingCompleteAfterScheduleHint": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "pendingMeetingRequests": "{count} طلبات اجتماع قيد الانتظار",
+  "@pendingMeetingRequests": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "meetingAcceptedToast": "تم قبول الاجتماع.",
+  "meetingDeclinedToast": "تم رفض الاجتماع.",
+  "meetingCompletedToast": "تم تعليم الاجتماع كمكتمل.",
+  "meetingUpdateFailed": "تعذر تحديث الاجتماع. حاول مرة أخرى.",
+  "openMeetings": "فتح الاجتماعات",
+  "meetingsPendingCount": "{count} بانتظار الرد",
+  "@meetingsPendingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "courseLabel": "المقرر",
+  "emailLabel": "البريد الإلكتروني",
+  "navSettings": "الإعدادات",
+  "notifications": "الإشعارات",
+  "settingsSoon": "ستُضاف الإعدادات لاحقًا.",
+  "changeTeacher": "تغيير",
+  "timerLabel": "المؤقت",
+  "teacherHomeHint": "أضف المقررات ثم ابدأ الموضوع الذي تدرّسه.",
+  "studentHomeHint": "انضم عبر بريد معلمك. لا يوجد بحث عن المعلمين — البريد يفتح جميع مقرراته.",
+  "addCourseTitle": "إضافة مقرر",
+  "addCourseSubtitle": "أدخل تفاصيل المقرر. يمكنك بدء الموضوعات بعد الحفظ.",
+  "saveCourse": "حفظ المقرر",
+  "editCourse": "تعديل المقرر",
+  "editCourseTitle": "تعديل المقرر",
+  "editCourseSubtitle": "حدّث تفاصيل المقرر. لا يمكن تغيير معرف المقرر.",
+  "saveCourseChanges": "حفظ التغييرات",
+  "courseAdded": "تم حفظ المقرر.",
+  "courseUpdated": "تم تحديث المقرر.",
+  "sectionBasic": "المعلومات الأساسية",
+  "sectionSchedule": "الجدول",
+  "sectionAcademic": "التفاصيل الأكاديمية",
+  "courseCode": "معرف المقرر",
+  "courseCodeTaken": "معرف المقرر هذا مضاف بالفعل. استخدم معرفًا مختلفًا.",
+  "department": "القسم",
+  "creditHours": "الساعات المعتمدة",
+  "phoneOtpDesktopUnavailable": "التحقق برقم الهاتف متاح في تطبيق الهاتف. على Windows، استخدم البريد الإلكتروني للتسجيل أو إعادة تعيين كلمة المرور. يمكن للحسابات الحالية تسجيل الدخول برقم الهاتف وكلمة المرور.",
+  "fileDownloadStarted": "بدأ التنزيل: {name}",
+  "creditHoursValue": "{count, plural, =1{ساعة معتمدة واحدة} =2{ساعتان معتمدتان} other{{count} ساعات معتمدة}}",
+  "creditHoursInvalid": "أدخل ساعات معتمدة بين 1 و 5.",
+  "lectureHall": "قاعة المحاضرة",
+  "lectureDays": "أيام المحاضرة",
+  "selectLectureDay": "اختر يوم محاضرة واحدًا على الأقل.",
+  "lectureTime": "وقت المحاضرة",
+  "lectureDaysAndTimeTitle": "أيام ووقت المحاضرة",
+  "lectureDaysAndTimeHint": "اختر الأيام وحدد من / إلى لكل فترة",
+  "selectLectureDaysLabel": "اختر أيام المحاضرة",
+  "selectMultipleDaysTip": "يمكنك اختيار أكثر من يوم",
+  "lectureTimeSlotsLabel": "فترات وقت المحاضرة",
+  "addAnotherTimeSlot": "إضافة فترة وقت أخرى",
+  "timeFrom": "من",
+  "timeTo": "إلى",
+  "registrationDate": "تاريخ التسجيل",
+  "selectDate": "اختر التاريخ",
+  "courseOutlines": "مخطط المقرر",
+  "semester": "الفصل الدراسي",
+  "section": "الشعبة",
+  "weekdayMon": "الإثنين",
+  "weekdayTue": "الثلاثاء",
+  "weekdayWed": "الأربعاء",
+  "weekdayThu": "الخميس",
+  "weekdayFri": "الجمعة",
+  "weekdaySat": "السبت",
+  "weekdaySun": "الأحد",
+  "openMenu": "القائمة",
+  "appearance": "المظهر",
+  "theme": "المظهر",
+  "themeHint": "Choose your preferred app theme",
+  "lightTheme": "Light",
+  "darkOption": "Dark",
+  "languageHint": "Select your preferred language",
+  "deleteAccountHint": "Permanently remove your account and all data",
+  "darkTheme": "الوضع الداكن",
+  "language": "اللغة",
+  "english": "English",
+  "arabic": "العربية",
+  "goBack": "رجوع",
+  "findYourTeacher": "ابحث عن معلمك",
+  "searchTeacherHint": "ابحث ببريد المعلم الإلكتروني...",
+  "filter": "تصفية",
+  "keepLearningAhead": "استمر في التعلّم وتقدّم.",
+  "keepTeachingAhead": "أضف المقررات وابقَ على تواصل مع صفك.",
+  "searchCoursesHint": "ابحث في مقرراتك...",
+  "notificationsSoon": "ستُفتح الإشعارات من هنا لاحقًا.",
+  "filtersSoon": "ستُضاف عوامل التصفية لاحقًا.",
+  "courseDetails": "تفاصيل المقرر",
+  "uploadSyllabus": "رفع المنهج",
+  "editCourseDetails": "تعديل تفاصيل المقرر",
+  "syllabusFiles": "المنهج",
+  "syllabusUploaded": "تم رفع المنهج.",
+  "courseInformation": "معلومات المقرر",
+  "classSchedule": "جدول المحاضرة",
+  "deleteCourseConfirm": "هل تريد حذف {name}؟ لا يمكن التراجع عن هذا.",
+  "@deleteCourseConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "tabOverview": "نظرة عامة",
+  "tabSyllabus": "المنهج",
+  "tabLectures": "المحاضرات",
+  "tabAssignments": "الواجبات",
+  "tabResources": "المصادر",
+  "courseInfo": "معلومات المقرر",
+  "announcements": "الإعلانات",
+  "writeAnnouncement": "اكتب إعلانًا...",
+  "postAnnouncement": "نشر",
+  "noAnnouncements": "لا توجد إعلانات بعد.",
+  "schedule": "الجدول",
+  "location": "المكان",
+  "credits": "الساعات",
+  "courseOutline": "خطة المقرر",
+  "addWeek": "+ إضافة أسبوع",
+  "weekNumber": "أ{number}",
+  "@weekNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "weekTitle": "عنوان الأسبوع",
+  "weekReadings": "القراءات",
+  "weekNotes": "ملاحظات (اختياري)",
+  "emptyWeeks": "لا توجد أسابيع بعد. أضف أول أسبوع في الخطة.",
+  "addLecture": "+ إضافة محاضرة",
+  "lectureTitle": "عنوان المحاضرة",
+  "lectureDate": "تاريخ المحاضرة",
+  "lectureDescription": "الوصف",
+  "lectureAttachment": "اسم المرفق (اختياري)",
+  "lectureFileHint": "ارفع ملفًا واحدًا أو أكثر بصيغة PDF أو Word أو PowerPoint",
+  "assignmentFileHint": "ارفع ملفًا واحدًا أو أكثر بصيغة PDF أو Word",
+  "resourceFileHint": "ارفع ملفًا واحدًا أو أكثر بصيغة PDF أو Word",
+  "addFiles": "إضافة ملفات",
+  "uploadingFiles": "جاري الرفع…",
+  "removeFile": "إزالة",
+  "addLink": "إضافة رابط آخر",
+  "resourceLink": "https://example.com",
+  "fileTooLarge": "يجب أن يكون الملف أصغر من 20 ميغابايت.",
+  "fileUnreadable": "تعذر قراءة الملف. جرّب ملفًا آخر.",
+  "fileUploadFailed": "تعذر رفع الملف. حاول مرة أخرى.",
+  "storageDenied": "تعذر حفظ الملف. سجّل الدخول كمعلم المقرر ثم حاول مرة أخرى.",
+  "emptyLectures": "لا توجد محاضرات بعد. أضف أول محاضرة.",
+  "addAssignment": "+ إضافة واجب",
+  "assignmentTitle": "عنوان الواجب",
+  "assignmentDue": "تاريخ التسليم",
+  "assignmentPoints": "الدرجات",
+  "assignmentDescription": "الوصف",
+  "published": "منشور",
+  "emptyAssignments": "لا توجد واجبات بعد. أضف أول واجب.",
+  "addResource": "+ إضافة مصدر",
+  "resourceTitle": "عنوان المصدر",
+  "resourceType": "النوع (كتاب، مستند، رابط…)",
+  "resourceDetail": "وصف مختصر",
+  "emptyResources": "لا توجد مصادر بعد. أضف أول مصدر.",
+  "itemAdded": "تم الحفظ.",
+  "viewDetails": "عرض التفاصيل",
+  "editItem": "تعديل",
+  "viewWeek": "تفاصيل الأسبوع",
+  "editWeek": "تعديل الأسبوع",
+  "viewLecture": "تفاصيل المحاضرة",
+  "editLecture": "تعديل المحاضرة",
+  "viewAssignment": "تفاصيل الواجب",
+  "editAssignment": "تعديل الواجب",
+  "viewResource": "تفاصيل المصدر",
+  "editResource": "تعديل المصدر",
+  "navProfile": "الملف الشخصي",
+  "navJoinedCourses": "الدورات المنضم إليها",
+  "@navJoinedCourses": {
+    "description": "Student bottom nav / sidebar: joined courses"
+  },
+  "noJoinedCoursesYet": "لم تنضم إلى أي دورة بعد.",
+  "@noJoinedCoursesYet": {
+    "description": "Empty state when student has no joined courses"
+  },
+  "profileSettings": "إعدادات الملف الشخصي",
+  "phoneNumber": "رقم الهاتف",
+  "gender": "الجنس",
+  "genderMale": "ذكر",
+  "genderFemale": "أنثى",
+  "genderOther": "آخر",
+  "bio": "نبذة",
+  "bioHint": "اكتبي مقدمة قصيرة عن نفسك...",
+  "officeTiming": "ساعات المكتب",
+  "academicInformation": "Academic Information",
+  "aboutMe": "About",
+  "university": "University",
+  "enrollmentYear": "Enrollment Year",
+  "officeNumber": "Office Number",
+  "officeInformation": "Office Information",
+  "activeStatus": "Active",
+  "phoneShort": "Phone",
+  "notSet": "Not set",
+  "country": "الدولة",
+  "saveChanges": "حفظ التغييرات",
+  "save": "حفظ",
+  "profileSaved": "تم حفظ الملف الشخصي.",
+  "profileSaveFailed": "تعذر حفظ الملف الشخصي. حاولي مرة أخرى.",
+  "profilePhotoHint": "JPG أو JPEG أو PNG فقط",
+  "profilePhotoInvalidType": "يُسمح فقط بصور JPG و JPEG و PNG.",
+  "profilePhotoTooLarge": "الصورة كبيرة جدًا. اختاري صورة JPG أو PNG أصغر.",
+  "deleteAccount": "حذف الحساب",
+  "deleteAccountWarning": "احذف حسابك وجميع مقرراتك وبياناتك نهائيًا. لا يمكن التراجع عن هذا الإجراء.",
+  "deleteAccountConfirm": "حذف حسابك وجميع بياناتك؟ لا يمكن التراجع عن ذلك.",
+  "chaptersAndTopics": "الفصول والموضوعات",
+  "manageCourseContent": "نظّم ما ستدرّسه في هذا المقرر.",
+  "viewCourseContent": "استكشف فصول وموضوعات هذا المقرر.",
+  "addChapter": "إضافة فصل",
+  "editChapter": "تعديل الفصل",
+  "deleteChapter": "حذف الفصل",
+  "deleteChapterConfirm": "هل تريد حذف هذا الفصل وجميع موضوعاته؟",
+  "chapterNumber": "الفصل {number}",
+  "@chapterNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "chapterTitle": "عنوان الفصل",
+  "chapterDescription": "وصف مختصر للفصل",
+  "noChapters": "لا توجد فصول بعد.",
+  "noChaptersTeacherHint": "أضف الفصل الأول لبدء تنظيم هذا المقرر.",
+  "noChaptersStudentHint": "لم يضف معلمك أي فصول بعد.",
+  "addTopic": "إضافة موضوع",
+  "changeTopic": "تغيير الموضوع",
+  "continueLectureHint": "اختَر موضوعًا سابقًا أو أضِف موضوعًا جديدًا لمتابعة هذه المحاضرة.",
+  "lectureTopicSwitched": "يتم التدريس الآن: {topic}",
+  "@lectureTopicSwitched": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "editTopic": "تعديل الموضوع",
+  "deleteTopic": "حذف الموضوع",
+  "deleteTopicConfirm": "هل تريد حذف هذا الموضوع؟",
+  "topicTitle": "عنوان الموضوع",
+  "topicDescription": "وصف مختصر للموضوع",
+  "noTopics": "لا توجد موضوعات في هذا الفصل بعد.",
+  "moveUp": "تحريك لأعلى",
+  "moveDown": "تحريك لأسفل",
+  "contentSaveFailed": "تعذر حفظ محتوى المقرر. حاول مرة أخرى.",
+  "startLecture": "بدء المحاضرة",
+  "joinLecture": "الانضمام للمحاضرة",
+  "joinLectureConfirm": "هل تريد الانضمام للمحاضرة المباشرة لـ {course}؟\n\n{topic}\n\nسيحاول وضع التركيز إبقاؤك في LEARNsync حتى ينهي المعلم المحاضرة. لا يمكن حظر التطبيقات أو المكالمات أو الإشعارات بالكامل على هاتف عادي.",
+  "@joinLectureConfirm": {
+    "placeholders": {
+      "course": {
+        "type": "String"
+      },
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "endLecture": "إنهاء المحاضرة",
+  "endLectureConfirm": "هل تريد إنهاء هذه المحاضرة المباشرة لجميع الطلاب؟",
+  "selectChapter": "اختر الفصل",
+  "selectTopic": "اختر الموضوع",
+  "lectureDuration": "مدة المحاضرة",
+  "durationMinutes": "{count} دقيقة",
+  "@durationMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTopicsToStart": "أضف فصلاً وموضوعًا واحدًا على الأقل قبل بدء المحاضرة.",
+  "lectureLiveNow": "توجد محاضرة مباشرة الآن",
+  "liveLectures": "المحاضرات المباشرة",
+  "chooseLiveLecture": "اختر محاضرة مباشرة للانضمام",
+  "timeRemaining": "الوقت المتبقي",
+  "lectureEnded": "انتهت هذه المحاضرة.",
+  "liveSessionStartFailed": "تعذر بدء المحاضرة. تأكد من عدم وجود محاضرة أخرى نشطة.",
+  "teacherAlreadyLive": "لديك محاضرة مباشرة بالفعل. أنهِها قبل بدء محاضرة أخرى.",
+  "requestToJoin": "طلب الانضمام",
+  "joinRequestPending": "بانتظار موافقة المعلم",
+  "enterLecture": "دخول المحاضرة",
+  "joinRequestSent": "تم إرسال طلب الانضمام إلى المعلم.",
+  "joinRequestFailed": "تعذر إرسال طلب الانضمام. حاول مرة أخرى.",
+  "joinRequests": "طلبات الانضمام",
+  "acceptJoin": "قبول",
+  "joinAll": "قبول الكل",
+  "noJoinRequests": "لا توجد طلبات انضمام قيد الانتظار.",
+  "acceptJoinFailed": "تعذر قبول طلب الانضمام.",
+  "feedbackSubmitted": "شكرًا — تم حفظ ملاحظاتك.",
+  "feedbackSubmitFailed": "تعذر حفظ الملاحظات. حاول مرة أخرى.",
+  "lectureFeedbackTitle": "ملاحظات المحاضرة",
+  "endedBadge": "انتهت",
+  "feedbackCommentHint": "شارك تعليقات أو اقتراحات (اختياري)",
+  "submitFeedbackCta": "إرسال الملاحظات",
+  "selectUnderstandingFirst": "اختر مدى فهمك لهذا الموضوع.",
+  "lectureEndTitle": "انتهت المحاضرة",
+  "lectureEndSubtitle": "ماذا تريد أن تفعل بعد ذلك؟",
+  "feedbackSubmittedTitle": "تم إرسال الملاحظات!",
+  "feedbackNextPrompt": "بما أنك اخترت '{level}'، ماذا تريد أن تفعل بعد ذلك؟",
+  "@feedbackNextPrompt": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "practiceWithAiTitle": "تمرّن مع مساعد الذكاء الاصطناعي",
+  "practiceWithAiHint": "اختبر نفسك الآن على مفاهيم {topic}.",
+  "@practiceWithAiHint": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "scheduleMeetingTitle": "جدولة اجتماع مع المعلم",
+  "scheduleMeetingHint": "احجز جلسة افتراضية سريعة فردية مع {teacher}.",
+  "@scheduleMeetingHint": {
+    "placeholders": {
+      "teacher": {
+        "type": "String"
+      }
+    }
+  },
+  "maybeLater": "ربما لاحقًا",
+  "teacherFeedbackSubtitle": "اطلع على مدى فهم الطلاب لهذه المحاضرة.",
+  "completedStatus": "مكتملة",
+  "studentsLabel": "طلاب",
+  "responsesOfTotal": "الردود: {received}/{total}",
+  "@responsesOfTotal": {
+    "placeholders": {
+      "received": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceRateLabel": "معدل التمرين: {percent}%",
+  "@practiceRateLabel": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "totalRequestsLabel": "{count} طلبات إجمالية",
+  "@totalRequestsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "thisCourseRequests": "هذه المادة: {count}",
+  "@thisCourseRequests": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "understandingBreakdown": "تفصيل الفهم",
+  "studentResponsesCount": "ردود الطلاب ({count})",
+  "@studentResponsesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "understoodPerfectly": "فهم تام",
+  "understoodMost": "فهم معظم المحتوى",
+  "understoodSome": "فهم جزئي",
+  "needMoreHelp": "يحتاج مساعدة أكثر",
+  "practicedBadge": "تمرّن",
+  "notPracticedBadge": "لم يتمرّن",
+  "meetingShort": "اجتماع",
+  "yesLabel": "نعم",
+  "noLabel": "لا",
+  "showLess": "عرض أقل",
+  "needHelpInsight": "{count} طلاب ({percent}%) يحتاجون مساعدة أكثر في هذا الموضوع. فكّر في مراجعة الأمثلة والتمرين.",
+  "@needHelpInsight": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "understandingSummary": "ملاحظات الفهم",
+  "feedbackCountLabel": "{count} ردود",
+  "@feedbackCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noFeedbackYet": "لا توجد ملاحظات من الطلاب بعد.",
+  "changeFeedback": "تغيير الملاحظات",
+  "liveSessionEndFailed": "تعذر إنهاء المحاضرة. حاول مرة أخرى.",
+  "liveTopic": "مباشر: {topic}",
+  "@liveTopic": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "liveNow": "مباشر",
+  "lectureComplete": "انتهت",
+  "plannedDuration": "المدة المخططة",
+  "sessionDetails": "تفاصيل الجلسة",
+  "startTime": "وقت البدء",
+  "studentsPresent": "{count} حاضرون",
+  "@studentsPresent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "attendance": "الحضور",
+  "attendeesCount": "الحضور ({count})",
+  "@attendeesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noStudentsYet": "لم ينضم أي طالب بعد.",
+  "youAreInClass": "أنت في هذه المحاضرة",
+  "waitingForStudents": "بانتظار انضمام الطلاب",
+  "teachingLiveHint": "أنت تدرّس مباشرة الآن",
+  "attendingLiveHint": "أنت تحضر المحاضرة المباشرة الآن",
+  "lectureInformation": "معلومات المحاضرة",
+  "currentTopic": "الموضوع الحالي",
+  "estimatedEnd": "الانتهاء المتوقع",
+  "topicLiveHint": "هذا الموضوع مباشر وظاهر لجميع الطلاب المسجلين.",
+  "joinedAt": "انضم في {time}",
+  "@joinedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "scheduleLabel": "الجدول",
+  "totalStudents": "الطلاب",
+  "creditsShort": "الساعات",
+  "liveChatSoon": "ستفتح المحادثة المباشرة من هنا لاحقًا.",
+  "livePollSoon": "ستفتح الاستطلاعات المباشرة من هنا لاحقًا.",
+  "liveChat": "محادثة",
+  "livePoll": "استطلاع",
+  "pointsLabel": "{count} درجة",
+  "@pointsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lectureSummaryTitle": "ملخص المحاضرة",
+  "lectureSummarySubtitle": "راجع هذه المحاضرة قبل عرض ملاحظات الطلاب.",
+  "viewStudentFeedback": "عرض ملاحظات الطلاب",
+  "endTime": "وقت الانتهاء",
+  "actualDuration": "المدة الفعلية",
+  "lectureSummarySaveFailed": "تعذر حفظ ملخص المحاضرة. حاول مرة أخرى.",
+  "taughtNotesLabel": "ماذا درّست اليوم؟",
+  "taughtNotesHint": "أضف ملاحظة قصيرة عما غطيته في هذه المحاضرة.",
+  "taughtNotesRequired": "يرجى كتابة ما درّسته اليوم.",
+  "backToDashboard": "العودة إلى لوحة التحكم",
+  "aiPracticeScreenTitle": "تمرّن مع الذكاء الاصطناعي",
+  "aiQuizResultsTitle": "نتائج اختبار الذكاء الاصطناعي",
+  "inProgressStatus": "قيد التنفيذ",
+  "completedBadgeCaps": "مكتمل",
+  "topicPrefix": "الموضوع: {topic}",
+  "@topicPrefix": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "aiPracticeAnswerAll": "يرجى الإجابة عن الأسئلة الخمسة أدناه قبل الإرسال.",
+  "questionOfTotal": "السؤال {current} من {total}",
+  "@questionOfTotal": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "submitQuiz": "إرسال الاختبار",
+  "quizCompletedTitle": "اكتمل الاختبار!",
+  "quizPassedMessage": "أحسنت! لقد اجتزت مراجعة هذه المحاضرة بنجاح.",
+  "quizFailedMessage": "راجع الشروحات وحاول مرة أخرى لتعزيز ما فاتك.",
+  "passedBadge": "ناجح",
+  "needsReviewBadge": "يحتاج مراجعة",
+  "totalQuestionsLabel": "إجمالي الأسئلة",
+  "correctAnswersLabel": "إجابات صحيحة",
+  "wrongAnswersLabel": "إجابات خاطئة",
+  "aiTutorBadge": "المعلّم الذكي",
+  "diagnosticTitle": "التشخيص والإرشاد",
+  "reviewExplanations": "مراجعة شرح الأسئلة",
+  "practiceAgain": "تمرّن مرة أخرى",
+  "endPractice": "إنهاء التمرين",
+  "resultsSecureHint": "تم تقييم أدائك وحفظه بشكل آمن.",
+  "aiPracticeUnsupported": "تمرين الذكاء الاصطناعي يعمل على تطبيق الهاتف. لا يمكن للمتصفح تحميل نموذج Qwen 2.5 0.5B على الجهاز.",
+  "aiPracticeNoNotesTitle": "ملاحظات المحاضرة مطلوبة",
+  "aiPracticeNoNotes": "لم يحفظ المعلّم ملاحظات عما دُرّس اليوم، لذلك لا يمكن إنشاء اختبار التمرين بعد. اطلب منهم حفظ الملاحظات ثم حاول مرة أخرى.",
+  "aiPracticeNoBelow50Title": "لا توجد شرائح أقل من 50٪",
+  "aiPracticeNoBelow50": "أسئلة التمرين تأتي فقط من الشرائح التي قيّمتها بأقل من 50٪. لم تقيّم أي شريحة بأقل من 50٪ في هذه المحاضرة، لذلك لا يوجد اختبار الآن.",
+  "aiPracticeSourceChapter": "الفصل: {chapter}",
+  "@aiPracticeSourceChapter": {
+    "placeholders": {
+      "chapter": {
+        "type": "String"
+      }
+    }
+  },
+  "aiPracticeSourceLecture": "المحاضرة: {lecture}",
+  "@aiPracticeSourceLecture": {
+    "placeholders": {
+      "lecture": {
+        "type": "String"
+      }
+    }
+  },
+  "aiPracticeSourceSlide": "الشريحة: {slide}",
+  "@aiPracticeSourceSlide": {
+    "placeholders": {
+      "slide": {
+        "type": "String"
+      }
+    }
+  },
+  "aiPracticeSourceTopic": "الموضوع: {topic}",
+  "@aiPracticeSourceTopic": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "aiPracticeDownloadTitle": "جارٍ تجهيز الذكاء الاصطناعي على الجهاز",
+  "aiPracticeDownloadHint": "يتم تنزيل Qwen 2.5 0.5B للتمرين الخاص على جهازك. يحدث هذا مرة واحدة.",
+  "aiPracticeGenerating": "جارٍ كتابة خمسة أسئلة من ملاحظات محاضرة اليوم…",
+  "aiPracticeGenerateFailed": "تعذر إنشاء الاختبار. حاول مرة أخرى.",
+  "aiPracticeRetry": "حاول مرة أخرى",
+  "aiPracticeSubmitIncomplete": "أجب عن كل الأسئلة قبل الإرسال.",
+  "aiPracticeSaveFailed": "تعذر حفظ محاولة التمرين.",
+  "explanationCorrectLabel": "الإجابة الصحيحة",
+  "explanationYourAnswer": "إجابتك",
+  "optionLetter": "{letter}",
+  "teacherAnalytics": "تحليلات المعلّم",
+  "teacherAnalyticsHint": "اطلع على الفهم، تمارين الذكاء الاصطناعي، والاجتماعات.",
+  "teacherAnalyticsSubtitle": "حدد الموضوعات الصعبة والطلاب الذين يحتاجون دعمًا.",
+  "analyticsOverview": "نظرة عامة",
+  "analyticsUnderstanding": "الفهم",
+  "analyticsPractice": "تمرين الذكاء الاصطناعي",
+  "analyticsMeetings": "الاجتماعات",
+  "analyticsAverage": "المتوسط {value}%",
+  "@analyticsAverage": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsResponses": "{count} ردود",
+  "@analyticsResponses": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsParticipation": "{percent}% مشاركة",
+  "@analyticsParticipation": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsCompletion": "{percent}% إكمال",
+  "@analyticsCompletion": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsAverageScore": "متوسط الدرجة {value}%",
+  "@analyticsAverageScore": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsMeetingTotal": "{count} طلبات",
+  "@analyticsMeetingTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsTopicOverview": "نظرة عامة على الموضوع",
+  "analyticsCombinedLectures": "{count} محاضرات مجمعة",
+  "analyticsTotalStudents": "إجمالي الطلاب",
+  "analyticsTotalResponses": "إجمالي الردود",
+  "analyticsAvgUnderstanding": "متوسط الفهم",
+  "analyticsUnderstandingDistribution": "توزيع مستوى الفهم",
+  "analyticsStudentPerformance": "أداء الطلاب والتفاصيل",
+  "analyticsSearchStudent": "ابحث عن طالب...",
+  "analyticsOnTrack": "على المسار",
+  "analyticsNeedsAttention": "يحتاج اهتماماً",
+  "analyticsMeetingYes": "نعم",
+  "analyticsMeetingNo": "لا",
+  "analyticsSelectTopicHint": "اختر مقرراً وفصلاً وموضوعاً لعرض تحليلات مجمعة لكل محاضرات هذا الموضوع.",
+  "analyticsByTopic": "الفهم حسب الموضوع",
+  "analyticsBySession": "الفهم حسب الجلسة",
+  "analyticsNeedsSupport": "طلاب يحتاجون دعمًا",
+  "analyticsLowUnderstanding": "فهم منخفض",
+  "analyticsIncompletePractice": "لم يتمرّنوا بعد",
+  "analyticsPendingMeetings": "اجتماعات معلّقة",
+  "analyticsAllCourses": "كل المقررات",
+  "analyticsAllChapters": "كل الفصول",
+  "analyticsAllTopics": "كل الموضوعات",
+  "analyticsAllTime": "كل الوقت",
+  "analyticsLast7Days": "آخر 7 أيام",
+  "analyticsLast30Days": "آخر 30 يومًا",
+  "analyticsCustomRange": "تواريخ مخصصة",
+  "analyticsFromDate": "من",
+  "analyticsToDate": "إلى",
+  "analyticsEmptyTitle": "لا توجد تحليلات بعد",
+  "analyticsEmpty": "بعد أن يرسل الطلاب الملاحظات أو يتمرّنوا أو يطلبوا اجتماعات، ستظهر النتائج هنا.",
+  "analyticsLoadFailed": "تعذر تحميل التحليلات. حاول مرة أخرى.",
+  "analyticsPracticeUnavailable": "إحصاءات تمرين الذكاء الاصطناعي غير متاحة الآن. ما زال الفهم والاجتماعات يظهران.",
+  "analyticsRetry": "حاول مرة أخرى",
+  "analyticsNoBars": "لا توجد بيانات فهم لهذا التصفية.",
+  "analyticsNoStudents": "لا يوجد طلاب في هذه القائمة.",
+  "analyticsResponsesShort": "{count} ردود · {value}%",
+  "@analyticsResponsesShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsChapterFilter": "الفصل",
+  "analyticsTopicFilter": "الموضوع",
+  "dateRangeLabel": "النطاق الزمني",
+  "aiPracticesEmpty": "لا توجد محاضرات منتهية بعد. بعد أن ينهي معلمك الحصة مع الملاحظات، ستظهر هنا تمارين الذكاء الاصطناعي.",
+  "aiPracticeColorLegendTooltip": "معنى الألوان",
+  "aiPracticeColorLegendTitle": "معنى الألوان",
+  "aiPracticeColorLegendSubtitle": "تُظهر الألوان عدد تمارين الذكاء الاصطناعي المستخدمة.",
+  "aiPracticeColorNone": "0 تمارين ذكاء اصطناعي",
+  "aiPracticeColorFew": "1 أو 2 تمارين ذكاء اصطناعي",
+  "aiPracticeColorMany": "3+ تمارين ذكاء اصطناعي",
+  "aiPracticeColorRed": "أحمر",
+  "aiPracticeColorYellow": "أصفر",
+  "aiPracticeColorTeal": "تركواز",
+  "lectureAnalytics": "تحليلات المحاضرة",
+  "lectureAnalyticsHint": "اطلع على تفاعل الطلاب مع كل محاضرة.",
+  "remove": "إزالة",
+  "@remove": {
+    "description": "Remove action label"
+  },
+  "enrolledStudents": "الطلاب المسجلون",
+  "@enrolledStudents": {
+    "description": "Course details link and enrolled list title"
+  },
+  "enrolledStudentsHint": "عرض وإدارة الطلاب المسجلين في هذه الدورة.",
+  "@enrolledStudentsHint": {
+    "description": "Subtitle under Enrolled Students card"
+  },
+  "enrolledStudentsCount": "{count} مسجلون",
+  "@enrolledStudentsCount": {
+    "description": "Count label above enrolled students list",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tapToViewProfile": "اضغط لعرض الملف الشخصي",
+  "@tapToViewProfile": {
+    "description": "Hint under student name on enrolled list"
+  },
+  "noEnrolledStudentsYet": "لا يوجد طلاب مسجلون في هذه الدورة بعد.",
+  "@noEnrolledStudentsYet": {
+    "description": "Empty enrolled students list"
+  },
+  "removeEnrolledStudent": "إزالة الطالب",
+  "@removeEnrolledStudent": {
+    "description": "Dialog title for removing enrolled student"
+  },
+  "removeEnrolledStudentConfirm": "إزالة {name} من هذه الدورة؟ سيحتاج إلى طلب الانضمام مرة أخرى.",
+  "@removeEnrolledStudentConfirm": {
+    "description": "Confirm removing an enrolled student",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeEnrolledStudentFailed": "تعذر إزالة الطالب. حاول مرة أخرى.",
+  "@removeEnrolledStudentFailed": {
+    "description": "Error toast when remove fails"
+  },
+  "studentRemovedFromCourse": "تمت إزالة {name} من هذه الدورة.",
+  "@studentRemovedFromCourse": {
+    "description": "Success toast after removing student",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "lectureAnalyticsSubtitle": "اطلع على تفاعل طلابك مع هذه المحاضرة.",
+  "courseLecturesTitle": "محاضرات المقرر",
+  "courseLecturesEmpty": "لا توجد محاضرات لهذا المقرر بعد. بعد أن تقدّم محاضرة مباشرة ستظهر هنا.",
+  "lectureAnalyticsNote": "بعد انتهاء المحاضرة يمكنك معرفة عدد الطلاب الذين فهموا الموضوع، وأكملوا تمرين الذكاء الاصطناعي، وطلبوا اجتماعًا.",
+  "backToLectures": "العودة إلى المحاضرات",
+  "viewAllRequests": "عرض كل الطلبات",
+  "totalRequestsThisLecture": "{count} طلبات لهذه المحاضرة",
+  "@totalRequestsThisLecture": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "studentsCountLabel": "{count} طلاب",
+  "@studentsCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "understandingSection": "١. الفهم",
+  "aiPracticeSection": "٢. تمرين الذكاء الاصطناعي",
+  "meetingsSection": "٣. الاجتماعات",
+  "lectureMeetingsHubTitle": "اجتماعات المحاضرة",
+  "lectureMeetingsHubSubtitle": "الطلبات الخاصة بهذه المحاضرة فقط.",
+  "pendingRequests": "طلبات معلّقة",
+  "scheduledMeetings": "اجتماعات مجدولة",
+  "attendedMeetings": "تم الحضور",
+  "noMeetingsForLecture": "لا توجد طلبات اجتماع لهذه المحاضرة بعد.",
+  "noPendingMeetingsForLecture": "لا توجد طلبات معلّقة لهذه المحاضرة.",
+  "noScheduledMeetingsForLecture": "لا توجد اجتماعات مجدولة لهذه المحاضرة.",
+  "noAttendedMeetingsForLecture": "لا توجد اجتماعات تم حضورها لهذه المحاضرة.",
+  "understandingDetailTitle": "تفاصيل الفهم",
+  "aiPracticeDetailTitle": "تفاصيل تمرين الذكاء الاصطناعي",
+  "understandingDetailHint": "اطلع على مدى فهم كل طالب لهذه المحاضرة",
+  "aiPracticeDetailHint": "اطلع على الطلاب الذين تمرّنوا على هذه المحاضرة",
+  "noPracticeAttemptsYet": "لا توجد محاولات تمرين لهذه المحاضرة بعد.",
+  "understandingOverview": "نظرة عامة على الفهم",
+  "practiceOverview": "نظرة عامة على التمرين",
+  "meetingsOverview": "نظرة عامة على الاجتماعات",
+  "totalResponsesLabel": "إجمالي الردود",
+  "totalPracticeLabel": "إجمالي التمرين",
+  "totalMeetingsLabel": "إجمالي الاجتماعات",
+  "searchStudentHint": "ابحث عن طالب...",
+  "noStudentsInLevel": "لا يوجد طلاب في هذا مستوى الفهم.",
+  "noStudentsInPracticeGroup": "لا يوجد طلاب في مجموعة التمرين هذه.",
+  "noMatchingStudents": "لا يوجد طلاب مطابقون لبحثك.",
+  "noMeetingsInBucket": "لا توجد اجتماعات في هذه الفئة.",
+  "noMatchingMeetings": "لا توجد اجتماعات مطابقة لبحثك.",
+  "studentsHeadingCount": "الطلاب ({count})",
+  "@studentsHeadingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "meetingsHeadingCount": "الاجتماعات ({count})",
+  "@meetingsHeadingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "meetingsCountLabel": "{count} اجتماعات",
+  "@meetingsCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "meetingsDetailTitle": "تفاصيل الاجتماعات",
+  "meetingsDetailHint": "اطلع على طلبات الاجتماع لهذه المحاضرة",
+  "meetingBucketPending": "معلّق",
+  "meetingBucketScheduled": "مجدول",
+  "meetingBucketAttended": "تم الحضور",
+  "studentProfileTitle": "ملف الطالب",
+  "thisLectureUnderstanding": "الفهم في هذه المحاضرة",
+  "teacherUnderstandingAnalyticsTitle": "تحليلات الفهم",
+  "teacherPracticeAnalyticsTitle": "تحليلات التدريب بالذكاء الاصطناعي",
+  "teacherPracticeAnalyticsHint": "اطلع على التدريب ضمن فلترك الحالي",
+  "teacherMeetingsAnalyticsTitle": "تحليلات الاجتماعات",
+  "teacherMeetingsAnalyticsHint": "اطلع على الاجتماعات ضمن فلترك الحالي",
+  "noTeacherPracticeAttemptsYet": "لا توجد محاولات تدريب لهذا الفلتر بعد.",
+  "noTeacherMeetingsYet": "لا توجد طلبات اجتماع لهذا الفلتر بعد.",
+  "openFile": "فتح",
+  "downloadFile": "تنزيل",
+  "fileOpenFailed": "تعذر فتح هذا الملف.",
+  "fileDownloadFailed": "تعذر تنزيل هذا الملف. حاول مرة أخرى.",
+  "fileDownloadSaved": "تم الحفظ في {path}",
+  "@fileDownloadSaved": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "joiningRequests": "طلبات الانضمام",
+  "noJoiningRequests": "لا توجد طلبات انضمام معلقة.",
+  "joinCourse": "الانضمام للدورة",
+  "requestSentTag": "تم إرسال الطلب",
+  "courseJoinedTag": "تم الانضمام",
+  "acceptJoinRequest": "قبول",
+  "rejectJoinRequest": "رفض",
+  "joinRequestAccepted": "انضم الطالب إلى الدورة.",
+  "joinRequestRejected": "تم رفض طلب الانضمام.",
+  "joinRequestActionFailed": "تعذر تحديث الطلب. حاول مرة أخرى.",
+  "invalidPhoneNumber": "أدخلي رقم هاتف صالحًا",
+  "verify": "تحقق",
+  "otpSentToPhone": "أرسلنا رمزًا إلى {contact}",
+  "@otpSentToPhone": {
+    "placeholders": {
+      "contact": {
+        "type": "String",
+        "example": "+923001234567"
+      }
+    }
+  },
+  "otpSmsSent": "أُرسل رمز جديد إلى {contact}",
+  "@otpSmsSent": {
+    "placeholders": {
+      "contact": {
+        "type": "String",
+        "example": "+923001234567"
+      }
+    }
+  },
+  "otpAttemptsRemaining": "تبقى {count} محاولات",
+  "@otpAttemptsRemaining": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "otpAttemptsExhausted": "محاولات كثيرة. أعيدي إرسال الرمز.",
+  "otpInvalidWithAttempts": "رمز غير صحيح. تبقى {count} محاولات",
+  "@otpInvalidWithAttempts": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "resendInSeconds": "إعادة الإرسال خلال {seconds}ث",
+  "@resendInSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "otpInvalidCode": "الرمز الذي أدخلته غير صحيح",
+  "otpExpiredCode": "انتهت صلاحية هذا الرمز، أعيدي الإرسال",
+  "didntReceiveCode": "لم يصلك الرمز؟",
+  "verifyPhoneTitle": "تحقق من هاتفك",
+  "verifyPhoneBody": "أدخل الرمز المكون من 6 أرقام الذي أرسلناه عبر رسالة نصية إلى {phone}.",
+  "@verifyPhoneBody": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "phoneVerifiedPleaseLogin": "تم التحقق من الهاتف. يرجى تسجيل الدخول.",
+  "emailOrPhoneHint": "البريد أو الهاتف مع رمز الدولة",
+  "invalidEmailOrPhone": "أدخل بريداً صالحاً أو رمز الدولة",
+  "topicFilesRequired": "ارفع شريحة أو ملفاً واحداً على الأقل لهذا الموضوع.",
+  "topicFilesRequiredHint": "الشرائح/الملفات مطلوبة (PDF أو Word أو PowerPoint).",
+  "topicSlides": "الشرائح",
+  "previousPage": "الصفحة السابقة",
+  "nextPage": "الصفحة التالية",
+  "slidePageOf": "صفحة {current} من {total}",
+  "@slidePageOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "slideFileOf": "ملف {current} من {total}",
+  "@slideFileOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "slideFilePageOf": "ملف {file} من {files} · صفحة {page} من {pages}",
+  "@slideFilePageOf": {
+    "placeholders": {
+      "file": {
+        "type": "int"
+      },
+      "files": {
+        "type": "int"
+      },
+      "page": {
+        "type": "int"
+      },
+      "pages": {
+        "type": "int"
+      }
+    }
+  },
+  "slidesLoadFailed": "تعذر تحميل هذا الملف.",
+  "slidesOpenExternally": "هذا النوع من الملفات يُفتح خارج التطبيق.",
+  "noTopicSlides": "لا توجد شرائح لهذا الموضوع.",
+  "followingTeacher": "متابعة المعلم",
+  "liveSlideHowClear": "ما مدى وضوح هذه الشريحة؟",
+  "liveSlideSignalsTitle": "فهم الشرائح المباشر",
+  "liveSlideSignalSaved": "تم الحفظ لهذه الشريحة",
+  "liveSlideNoSignals": "لم يتم تقديم ملاحظات من الطلاب بعد.",
+  "liveSlideOnPage": "الشريحة {page}",
+  "@liveSlideOnPage": {
+    "placeholders": {
+      "page": { "type": "int" }
+    }
+  },
+  "liveSlideOnFilePage": "ملف {file} · شريحة {page}",
+  "@liveSlideOnFilePage": {
+    "placeholders": {
+      "file": { "type": "int" },
+      "page": { "type": "int" }
+    }
+  },
+  "liveSlideNeedHelpCount": "{count} يحتاجون مساعدة في هذه الشريحة",
+  "@liveSlideNeedHelpCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "liveSlideSignalFailed": "تعذر حفظ ملاحظات الشريحة. حاول مرة أخرى.",
+  "studentSlideFeedbackSummaryTitle": "ملاحظاتك على الشرائح",
+  "studentSlideFeedbackSummarySubtitle": "راجع تقييمك لكل شريحة أثناء المحاضرة.",
+  "studentSlideFeedbackEmpty": "لم تترك ملاحظات على أي شريحة خلال هذه المحاضرة.",
+  "studentSlideFeedbackNext": "التالي",
+  "lectureSummaryTitleNumbered": "ملخص المحاضرة {number}",
+  "@lectureSummaryTitleNumbered": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "studentSlideFeedbackSummaryTitleNumbered": "ملاحظات شرائح المحاضرة {number}",
+  "@studentSlideFeedbackSummaryTitleNumbered": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lectureEndTitleNumbered": "انتهت المحاضرة {number}",
+  "@lectureEndTitleNumbered": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceWithAiTitleNumbered": "تمرّن على المحاضرة {number} مع مساعد الذكاء الاصطناعي",
+  "@practiceWithAiTitleNumbered": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lectureNumber": "المحاضرة {number}",
+  "@lectureNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "liveFocusModeBanner": "وضع التركيز مفعّل — ابقِ في LEARNsync حتى تنتهي المحاضرة. التطبيقات الأخرى والمكالمات والإشعارات لا تُحظر بالكامل من نظام التشغيل.",
+  "liveFocusModeAndroidHint": "وضع التركيز: تبقى الشاشة مضاءة، وتُحظر لقطات الشاشة، وقد يطلب Android تثبيت هذا التطبيق. امنح إذن عدم الإزعاج لكتم الإشعارات (قد تظل المكالمات ترن بدون MDM).",
+  "liveFocusModeIosHint": "وضع التركيز: تبقى الشاشة مضاءة. لا يستطيع iOS حظر التطبيقات أو المكالمات أو الإشعارات من هذا التطبيق — استخدمي Guided Access (الإعدادات > إمكانية الوصول) لقفل أقوى.",
+  "liveFocusOpenDndSettings": "إذن عدم الإزعاج",
+  "liveFocusLeftAppWarn": "غادرتِ LEARNsync أثناء المحاضرة المباشرة. يمكن لمعلمك رؤيتك كغائبة. ارجعي وابقي في المحاضرة.",
+  "liveFocusStayTitle": "المحاضرة جارية",
+  "liveFocusStayBody": "ابقي في هذه الشاشة حتى ينهي معلمك المحاضرة. المغادرة مبكرًا ظاهرة للمعلم.",
+  "liveFocusStudentAway": "غائبة (غادرت التطبيق)",
+  "liveFollowTeacher": "\u0645\u062a\u0627\u0628\u0639\u0629 \u0627\u0644\u0645\u0639\u0644\u0645",
+  "jumpToSlide": "الانتقال إلى شريحة",
+  "slideNumber": "رقم الشريحة",
+  "slideNumberOutOfRange": "أدخل رقم شريحة بين 1 و{count}."
+}

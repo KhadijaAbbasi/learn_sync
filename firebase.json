@@ -1,0 +1,53 @@
+{
+  "hosting": {
+    "public": "build/web",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [{ "source": "**", "destination": "/index.html" }],
+    "headers": [
+      {
+        "source": "/index.html",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+      },
+      {
+        "source": "/flutter_bootstrap.js",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+      }
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": ["node_modules", ".git", "firebase-debug.log", "firebase-debug.*.log"]
+    }
+  ],
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "learnsync-bb5e6",
+          "appId": "1:285143689988:android:72b91b04dab7504b5f3e51",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "learnsync-bb5e6",
+          "configurations": {
+            "android": "1:285143689988:android:72b91b04dab7504b5f3e51",
+            "ios": "1:285143689988:ios:728d93b289fa7f315f3e51",
+            "macos": "1:285143689988:ios:728d93b289fa7f315f3e51",
+            "web": "1:285143689988:web:bf92cbb3cdc7af585f3e51"
+          }
+        }
+      }
+    }
+  }
+}

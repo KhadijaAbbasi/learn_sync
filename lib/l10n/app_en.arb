@@ -1,0 +1,1368 @@
+{
+  "@@locale": "en",
+  "appName": "LEARNsync",
+  "appTagline": "Real time student feedback",
+  "welcomeBack": "Welcome Back!",
+  "loginSubtitle": "Login to continue to your account.",
+  "emailOrUsername": "Email or Username",
+  "password": "Password",
+  "login": "Login",
+  "forgotPassword": "Forgot Password?",
+  "forgotPasswordTitle": "Forgot Password",
+  "forgotPasswordSubtitle": "Enter the email for your account. We will send a link to reset your password.",
+  "sendResetLink": "Send reset link",
+  "resetEmailSentTitle": "Check your email",
+  "resetEmailSentBody": "We sent a password reset link to {email}.",
+  "@resetEmailSentBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "resetEmailSentHint": "Open the email, set a new password, then come back here to log in.",
+  "accountNotFound": "No account found for this email.",
+  "dontHaveAccount": "Don't have an account?",
+  "signUp": "Sign Up",
+  "otpTitle": "Verify your email",
+  "otpSubtitle": "Enter the 6-digit code we sent to {email}.",
+  "@otpSubtitle": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "otpHint": "6-digit code",
+  "otpInvalidLength": "Enter the 6-digit verification code.",
+  "verifyOtp": "Verify code",
+  "otpSending": "Sending...",
+  "resendOtp": "Resend code",
+  "otpEmailSent": "We sent a verification email to {email}. Check your inbox and spam folder.",
+  "@otpEmailSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "otpResent": "A new verification code was sent to your email.",
+  "userAlreadyExistsTitle": "Account already exists",
+  "userAlreadyExistsBody": "This email is already registered. Log in, or use Forgot Password if you need to reset it.",
+  "verifyEmailTitle": "Check your email",
+  "verifyEmailBody": "Open the verification email we sent to {email}. After you tap the link, this screen will open the login page.",
+  "@verifyEmailBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "waitingForEmailVerification": "Waiting for you to tap the link in your email…",
+  "emailVerifiedPleaseLogin": "Email verified. Please log in.",
+  "emailNotVerified": "Open the verification email and tap the link first, then try again.",
+  "createAccount": "Create Your Account",
+  "signUpSubtitle": "Sign up to get started.",
+  "fullName": "Full Name",
+  "emailAddress": "Email Address",
+  "iAmA": "I am a...",
+  "teacher": "Teacher",
+  "student": "Student",
+  "confirmPassword": "Confirm Password",
+  "iAgreePrefix": "I agree to the ",
+  "andConjunction": " and ",
+  "termsOfUse": "Terms of Use",
+  "privacyPolicy": "Privacy Policy",
+  "alreadyHaveAccount": "Already have an account?",
+  "backToLogin": "Back to Login",
+  "requiredField": "This field is required",
+  "invalidEmail": "Enter a valid email address",
+  "passwordTooShort": "Password must be at least 8 characters",
+  "passwordRequirements": "Use at least 8 characters, with uppercase, lowercase, a number, and a special character.",
+  "passwordsDoNotMatch": "Passwords do not match",
+  "selectRole": "Please select your role",
+  "acceptTerms": "Please accept the Terms of Use and Privacy Policy",
+  "loginSuccess": "Signed in. Backend will be connected in a later step.",
+  "signupSuccess": "Account created. You can now log in.",
+  "termsPlaceholderBody": "The full Terms of Use will be added here before release.",
+  "privacyPlaceholderBody": "The full Privacy Policy will be added here before release.",
+  "ok": "OK",
+  "helloUser": "Hello, {name}",
+  "@helloUser": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "teacherDashboard": "Teacher Dashboard",
+  "studentDashboard": "Student Dashboard",
+  "yourCourses": "Your Courses",
+  "addCourse": "Add Course",
+  "newCourse": "New course",
+  "courseName": "Course name",
+  "deleteCourse": "Delete course",
+  "noCoursesTeacher": "No courses yet. Add a course to start teaching.",
+  "noCoursesStudent": "Connect your teacher to see available courses.",
+  "liveLecture": "Live Lecture",
+  "noLiveLecture": "No lecture is live right now.",
+  "connectTeacher": "Connect with your teacher",
+  "connectTeacherHint": "Enter your teacher's email to access their courses.",
+  "teacherEmail": "Teacher email",
+  "connect": "Connect",
+  "connectedTo": "Connected to {name}",
+  "@connectedTo": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "logout": "Log out",
+  "logoutConfirm": "Are you sure you want to log out?",
+  "statsCourses": "Courses",
+  "statsLive": "Live",
+  "statsMeetings": "Meetings",
+  "topicsCount": "{count} topics",
+  "@topicsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "startTopicSoon": "Topic start flow will be added next.",
+  "aiPracticeSoon": "AI Practice will open from here next.",
+  "meetingSoon": "Meeting requests will open from here next.",
+  "invalidCredentials": "Incorrect email or password.",
+  "demoHint": "Demo: teacher@learnsync.app or student@learnsync.app  •  Demo@123",
+  "emailInUse": "An account already exists for this email.",
+  "memberId": "ID",
+  "teacherMemberId": "Teacher ID",
+  "studentMemberId": "Student ID",
+  "memberIdInvalid": "Use 3–32 letters, numbers, hyphen, or underscore.",
+  "memberIdTaken": "This ID is already linked to another email.",
+  "networkError": "Check your internet connection and try again.",
+  "tooManyRequests": "Too many attempts. Try again later.",
+  "authUnknown": "Something went wrong. Please try again.",
+  "teacherNotFound": "No teacher found with that name or email.",
+  "teacherHasNoCourses": "Your teacher has not added any courses yet.",
+  "courseSaveFailed": "Could not save the course. Try again.",
+  "courseDeleteFailed": "Could not delete the course. Try again.",
+  "add": "Add",
+  "cancel": "Cancel",
+  "quickActions": "Quick actions",
+  "aiPractice": "AI Practice",
+  "meetTeacher": "Meet Teacher",
+  "welcomeBackName": "Welcome back, {name}",
+  "@welcomeBackName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "stayUpdated": "Stay updated and keep learning!",
+  "currentLiveTopic": "Current live topic",
+  "liveBadge": "LIVE",
+  "chapterLabel": "Chapter 2: Polynomials",
+  "liveTopicTitle": "Quadratic Equations",
+  "startedAt": "Started at {time}",
+  "@startedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "howWellUnderstood": "How well did you understand this topic?",
+  "understand100": "100%",
+  "understand80": "80%",
+  "understand60": "60%",
+  "understandBelow50": "Below 50%",
+  "understand100Hint": "Fully clear",
+  "understand80Hint": "Mostly clear",
+  "understand60Hint": "Need a recap",
+  "understandBelow50Hint": "Need help",
+  "whatNext": "What would you like to do next?",
+  "aiPracticeHint": "Get topic-specific questions generated for you.",
+  "startPractice": "Start Practice",
+  "alreadyPracticed": "Already practiced",
+  "practiceMore": "Practice more",
+  "pastPracticeTitle": "Past practice",
+  "pastPracticeEmpty": "No saved practice questions for this lecture yet.",
+  "pastPracticeAttemptLabel": "Attempt {n} · {score}/{total} ({percent}%)",
+  "@pastPracticeAttemptLabel": {
+    "placeholders": {
+      "n": {"type": "int"},
+      "score": {"type": "int"},
+      "total": {"type": "int"},
+      "percent": {"type": "int"}
+    }
+  },
+  "requestMeetingHint": "Ask for extra support without speaking in class.",
+  "requestMeeting": "Request Meeting",
+  "yourProgress": "Your Progress",
+  "viewAll": "View All",
+  "topicsCompleted": "Topics Completed",
+  "aiPracticesCompleted": "AI Practices Completed",
+  "meetingsRequested": "Meetings Requested",
+  "thisMonth": "This month",
+  "navDashboard": "Dashboard",
+  "navLiveTopics": "Live Topics",
+  "navPractice": "Practice",
+  "navMeetings": "Meetings",
+  "myMeetingRequests": "My meeting requests",
+  "meetingRequests": "Meeting requests",
+  "meetingDetails": "Meeting details",
+  "createMeetingIntro": "Tell your teacher what you need help with. Keep it short and clear.",
+  "selectCourse": "Select course",
+  "meetingTopicLabel": "Topic",
+  "meetingTopicHint": "What topic do you need help with?",
+  "meetingReasonLabel": "Reason",
+  "meetingReasonHint": "Share what feels unclear or what you want to discuss.",
+  "sendMeetingRequest": "Send request",
+  "meetingRequestSent": "Your meeting request was sent.",
+  "meetingRequestFailed": "Could not send the meeting request. Try again.",
+  "meetingFormIncomplete": "Add a topic and reason before sending.",
+  "linkTeacherFirstForMeeting": "Connect to your teacher before requesting a meeting.",
+  "noMeetingRequestsYet": "No meeting requests yet",
+  "noMeetingRequestsStudentHint": "When something feels unclear, send a quiet request to your teacher.",
+  "noMeetingRequestsTeacherHint": "When a student asks for support, their request will appear here.",
+  "meetingStatusPending": "Pending",
+  "meetingStatusAccepted": "Accepted",
+  "meetingStatusDeclined": "Declined",
+  "meetingStatusCompleted": "Completed",
+  "meetingStatusReschedule": "Reschedule",
+  "meetingScheduledFor": "Scheduled for",
+  "teacherNote": "Teacher note",
+  "teacherNoteOptional": "Note for student (optional)",
+  "meetingPendingHint": "Your teacher has received this request and will respond soon.",
+  "meetingAcceptedHint": "Your teacher accepted this meeting. Check the scheduled time above.",
+  "meetingDeclinedHint": "Your teacher could not take this meeting. You can send a new request anytime.",
+  "meetingCompletedHint": "This meeting is marked complete. Great job following up.",
+  "meetingRescheduleHint": "You asked to reschedule. Your teacher will pick a new time.",
+  "meetingNotFound": "This meeting request could not be found.",
+  "pendingMeetings": "Needs a reply",
+  "allMeetings": "All requests",
+  "scheduleMeetingPrompt": "Pick a time, then accept or decline.",
+  "chooseMeetingDateTime": "Choose date & time",
+  "chooseNewMeetingDateTime": "Choose a new date & time",
+  "chooseMeetingTimeFirst": "Choose a meeting date and time first.",
+  "acceptMeeting": "Accept meeting",
+  "declineMeeting": "Decline",
+  "setNewMeetingTime": "Set new meeting time",
+  "studentAskedReschedule": "Student asked to reschedule. Pick a new time.",
+  "requestReschedule": "Request reschedule",
+  "requestRescheduleHint": "Need a different time? Ask your teacher to reschedule.",
+  "rescheduleNoteOptional": "Why do you need a new time? (optional)",
+  "rescheduleNoteLabel": "Reschedule note",
+  "rescheduleRequestedToast": "Reschedule request sent to your teacher.",
+  "meetingRescheduledToast": "New meeting time saved.",
+  "markMeetingCompleted": "Mark as completed",
+  "meetingCompleteAfterSchedule": "You can mark complete only after the scheduled time.",
+  "meetingCompleteAfterScheduleHint": "Complete unlocks after {time}.",
+  "@meetingCompleteAfterScheduleHint": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "pendingMeetingRequests": "{count} pending meeting requests",
+  "@pendingMeetingRequests": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "meetingAcceptedToast": "Meeting accepted.",
+  "meetingDeclinedToast": "Meeting declined.",
+  "meetingCompletedToast": "Meeting marked complete.",
+  "meetingUpdateFailed": "Could not update the meeting. Try again.",
+  "openMeetings": "Open meetings",
+  "meetingsPendingCount": "{count} waiting",
+  "@meetingsPendingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "courseLabel": "Course",
+  "emailLabel": "Email",
+  "navSettings": "Settings",
+  "notifications": "Notifications",
+  "settingsSoon": "Settings will be added next.",
+  "changeTeacher": "Change",
+  "timerLabel": "Timer",
+  "teacherHomeHint": "Add courses, then start the topic you are teaching.",
+  "studentHomeHint": "Join using your teacher's email. There is no teacher search — that email unlocks their courses.",
+  "addCourseTitle": "Add Course",
+  "addCourseSubtitle": "Enter the course details. You can start topics after saving.",
+  "saveCourse": "Save Course",
+  "editCourse": "Edit course",
+  "editCourseTitle": "Edit Course",
+  "editCourseSubtitle": "Update the course details. The course ID cannot be changed.",
+  "saveCourseChanges": "Save changes",
+  "courseAdded": "Course saved.",
+  "courseUpdated": "Course updated.",
+  "sectionBasic": "Basic information",
+  "sectionSchedule": "Schedule",
+  "sectionAcademic": "Academic details",
+  "courseCode": "Course ID",
+  "courseCodeTaken": "This course ID is already added. Use a different ID.",
+  "department": "Department",
+  "creditHours": "Credit hours",
+  "phoneOtpDesktopUnavailable": "Phone verification is available in the mobile app. On Windows, use email sign-up or email password reset. Existing accounts can still sign in with phone and password.",
+  "fileDownloadStarted": "Download started: {name}",
+  "@fileDownloadStarted": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "creditHoursValue": "{count, plural, =1{1 credit hour} other{{count} credit hours}}",
+  "@creditHoursValue": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "creditHoursInvalid": "Enter credit hours between 1 and 5.",
+  "lectureHall": "Lecture hall",
+  "lectureDays": "Lecture days",
+  "selectLectureDay": "Select at least one lecture day.",
+  "lectureTime": "Lecture time",
+  "lectureDaysAndTimeTitle": "Lecture Days & Time",
+  "lectureDaysAndTimeHint": "Select days and set From / To for each slot",
+  "selectLectureDaysLabel": "Select Lecture Days",
+  "selectMultipleDaysTip": "You can select multiple days",
+  "lectureTimeSlotsLabel": "Lecture Time Slots",
+  "addAnotherTimeSlot": "Add Another Time Slot",
+  "timeFrom": "From",
+  "timeTo": "To",
+  "registrationDate": "Registration date",
+  "selectDate": "Select date",
+  "courseOutlines": "Course outlines",
+  "semester": "Semester",
+  "section": "Section",
+  "weekdayMon": "Mon",
+  "weekdayTue": "Tue",
+  "weekdayWed": "Wed",
+  "weekdayThu": "Thu",
+  "weekdayFri": "Fri",
+  "weekdaySat": "Sat",
+  "weekdaySun": "Sun",
+  "openMenu": "Menu",
+  "appearance": "Appearance",
+  "theme": "Theme",
+  "themeHint": "Choose your preferred app theme",
+  "lightTheme": "Light",
+  "darkOption": "Dark",
+  "languageHint": "Select your preferred language",
+  "deleteAccountHint": "Permanently remove your account and all data",
+  "darkTheme": "Dark theme",
+  "language": "Language",
+  "english": "English",
+  "arabic": "Arabic",
+  "goBack": "Back",
+  "findYourTeacher": "Find Your Teacher",
+  "searchTeacherHint": "Search by teacher email...",
+  "filter": "Filter",
+  "keepLearningAhead": "Keep learning and stay ahead.",
+  "keepTeachingAhead": "Add courses and stay in sync with your class.",
+  "searchCoursesHint": "Search your courses...",
+  "notificationsSoon": "Notifications will open here next.",
+  "filtersSoon": "Filters will be added next.",
+  "courseDetails": "Course details",
+  "uploadSyllabus": "Upload syllabus",
+  "editCourseDetails": "Edit course details",
+  "syllabusFiles": "Syllabus",
+  "syllabusUploaded": "Syllabus uploaded.",
+  "courseInformation": "Course Information",
+  "classSchedule": "Class Schedule",
+  "deleteCourseConfirm": "Delete {name}? This cannot be undone.",
+  "@deleteCourseConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "tabOverview": "Overview",
+  "tabSyllabus": "Syllabus",
+  "tabLectures": "Lectures",
+  "tabAssignments": "Assignments",
+  "tabResources": "Resources",
+  "courseInfo": "Course info",
+  "announcements": "Announcements",
+  "writeAnnouncement": "Write an announcement...",
+  "postAnnouncement": "Post",
+  "noAnnouncements": "No announcements yet.",
+  "schedule": "Schedule",
+  "location": "Location",
+  "credits": "Credits",
+  "courseOutline": "Course Outline",
+  "addWeek": "+ Add Week",
+  "weekNumber": "W{number}",
+  "@weekNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "weekTitle": "Week title",
+  "weekReadings": "Readings",
+  "weekNotes": "Notes (optional)",
+  "emptyWeeks": "No weeks yet. Add the first week of the outline.",
+  "addLecture": "+ Add Lecture",
+  "lectureTitle": "Lecture title",
+  "lectureDate": "Lecture date",
+  "lectureDescription": "Description",
+  "lectureAttachment": "Attachment name (optional)",
+  "lectureFileHint": "Upload one or more PDF, Word, or PowerPoint files",
+  "assignmentFileHint": "Upload one or more PDF or Word files",
+  "resourceFileHint": "Upload one or more PDF or Word files",
+  "addFiles": "Add files",
+  "uploadingFiles": "Uploading…",
+  "removeFile": "Remove",
+  "addLink": "Add another link",
+  "resourceLink": "https://example.com",
+  "fileTooLarge": "File must be smaller than 20 MB.",
+  "fileUnreadable": "Could not read that file. Try another one.",
+  "fileUploadFailed": "Could not upload the file. Try again.",
+  "storageDenied": "Could not save the file. Sign in as the course teacher and try again.",
+  "emptyLectures": "No lectures yet. Add the first lecture.",
+  "addAssignment": "+ Add Assignment",
+  "assignmentTitle": "Assignment title",
+  "assignmentDue": "Due date",
+  "assignmentPoints": "Points",
+  "assignmentDescription": "Description",
+  "published": "Published",
+  "emptyAssignments": "No assignments yet. Add the first assignment.",
+  "addResource": "+ Add Resource",
+  "resourceTitle": "Resource title",
+  "resourceType": "Type (Textbook, Document, Link…)",
+  "resourceDetail": "Short description",
+  "emptyResources": "No resources yet. Add the first resource.",
+  "itemAdded": "Saved.",
+  "viewDetails": "View details",
+  "editItem": "Edit",
+  "viewWeek": "Week details",
+  "editWeek": "Edit week",
+  "viewLecture": "Lecture details",
+  "editLecture": "Edit lecture",
+  "viewAssignment": "Assignment details",
+  "editAssignment": "Edit assignment",
+  "viewResource": "Resource details",
+  "editResource": "Edit resource",
+  "navProfile": "Profile",
+  "navJoinedCourses": "Joined Courses",
+  "@navJoinedCourses": {
+    "description": "Student bottom nav / sidebar: joined courses"
+  },
+  "noJoinedCoursesYet": "You have not joined any courses yet.",
+  "@noJoinedCoursesYet": {
+    "description": "Empty state when student has no joined courses"
+  },
+  "profileSettings": "Profile Settings",
+  "phoneNumber": "Phone Number",
+  "@phoneNumber": {
+    "description": "Label/hint for the phone number field"
+  },
+  "gender": "Gender",
+  "genderMale": "Male",
+  "genderFemale": "Female",
+  "genderOther": "Other",
+  "bio": "Bio",
+  "bioHint": "Share a brief introduction about yourself...",
+  "officeTiming": "Office Timing",
+  "academicInformation": "Academic Information",
+  "aboutMe": "About",
+  "university": "University",
+  "enrollmentYear": "Enrollment Year",
+  "officeNumber": "Office Number",
+  "officeInformation": "Office Information",
+  "activeStatus": "Active",
+  "phoneShort": "Phone",
+  "notSet": "Not set",
+  "country": "Country",
+  "saveChanges": "Save Changes",
+  "save": "Save",
+  "profileSaved": "Profile saved.",
+  "profileSaveFailed": "Could not save your profile. Try again.",
+  "profilePhotoHint": "JPG, JPEG, or PNG only",
+  "profilePhotoInvalidType": "Only JPG, JPEG, and PNG images are allowed.",
+  "profilePhotoTooLarge": "That photo is too large. Choose a smaller JPG or PNG.",
+  "deleteAccount": "Delete Account",
+  "deleteAccountWarning": "Permanently delete your account and all of your courses and data. This action is irreversible.",
+  "deleteAccountConfirm": "Delete your account and all of your data? This cannot be undone.",
+  "chaptersAndTopics": "Chapters & Topics",
+  "manageCourseContent": "Organize what you will teach in this course.",
+  "viewCourseContent": "Explore the chapters and topics in this course.",
+  "addChapter": "Add chapter",
+  "editChapter": "Edit chapter",
+  "deleteChapter": "Delete chapter",
+  "deleteChapterConfirm": "Delete this chapter and all of its topics?",
+  "chapterNumber": "Chapter {number}",
+  "@chapterNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "chapterTitle": "Chapter title",
+  "chapterDescription": "Short chapter description",
+  "noChapters": "No chapters yet.",
+  "noChaptersTeacherHint": "Add the first chapter to start organizing this course.",
+  "noChaptersStudentHint": "Your teacher has not added any chapters yet.",
+  "addTopic": "Add topic",
+  "changeTopic": "Change topic",
+  "continueLectureHint": "Select a previous topic or add a new one to continue this lecture.",
+  "lectureTopicSwitched": "Now teaching: {topic}",
+  "@lectureTopicSwitched": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "editTopic": "Edit topic",
+  "deleteTopic": "Delete topic",
+  "deleteTopicConfirm": "Delete this topic?",
+  "topicTitle": "Topic title",
+  "topicDescription": "Short topic description",
+  "noTopics": "No topics in this chapter yet.",
+  "moveUp": "Move up",
+  "moveDown": "Move down",
+  "contentSaveFailed": "Could not save the course content. Try again.",
+  "startLecture": "Start Lecture",
+  "joinLecture": "Join Lecture",
+  "joinLectureConfirm": "Join the live lecture for {course}?\n\n{topic}\n\nFocus mode will try to keep you in LEARNsync until the teacher ends the lecture. Other apps, calls, and notifications cannot be fully blocked on a normal phone.",
+  "@joinLectureConfirm": {
+    "placeholders": {
+      "course": {
+        "type": "String"
+      },
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "endLecture": "End Lecture",
+  "endLectureConfirm": "End this live lecture for all students?",
+  "selectChapter": "Select chapter",
+  "selectTopic": "Select topic",
+  "lectureDuration": "Lecture duration",
+  "durationMinutes": "{count} minutes",
+  "@durationMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTopicsToStart": "Add at least one chapter and topic before starting a lecture.",
+  "lectureLiveNow": "A lecture is live now",
+  "liveLectures": "Live Lectures",
+  "chooseLiveLecture": "Choose a live lecture to join",
+  "timeRemaining": "Time remaining",
+  "lectureEnded": "This lecture has ended.",
+  "liveSessionStartFailed": "Could not start the lecture. Check that another lecture is not already active.",
+  "teacherAlreadyLive": "You already have a live lecture. End it before starting another.",
+  "requestToJoin": "Request to Join",
+  "joinRequestPending": "Waiting for teacher approval",
+  "enterLecture": "Enter Lecture",
+  "joinRequestSent": "Join request sent to the teacher.",
+  "joinRequestFailed": "Could not send join request. Try again.",
+  "joinRequests": "Join Requests",
+  "acceptJoin": "Accept",
+  "joinAll": "Join All",
+  "noJoinRequests": "No pending join requests.",
+  "acceptJoinFailed": "Could not accept the join request.",
+  "feedbackSubmitted": "Thanks — your feedback was saved.",
+  "feedbackSubmitFailed": "Could not save feedback. Try again.",
+  "lectureFeedbackTitle": "Lecture Feedback",
+  "endedBadge": "ENDED",
+  "feedbackCommentHint": "Share comments or suggestions (optional)",
+  "submitFeedbackCta": "SUBMIT FEEDBACK",
+  "selectUnderstandingFirst": "Select how well you understood this topic.",
+  "feedbackSubmittedTitle": "Feedback Submitted!",
+  "lectureEndTitle": "Lecture End",
+  "lectureEndSubtitle": "What would you like to do next?",
+  "feedbackNextPrompt": "Since you selected '{level}', what would you like to do next?",
+  "@feedbackNextPrompt": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "practiceWithAiTitle": "Practice with AI Assistant",
+  "practiceWithAiHint": "Quiz yourself on {topic} concepts now.",
+  "@practiceWithAiHint": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "scheduleMeetingTitle": "Schedule Meeting with Teacher",
+  "scheduleMeetingHint": "Schedule a quick 1-on-1 virtual session with {teacher}.",
+  "@scheduleMeetingHint": {
+    "placeholders": {
+      "teacher": {
+        "type": "String"
+      }
+    }
+  },
+  "maybeLater": "Maybe Later",
+  "teacherFeedbackSubtitle": "See how students understood this lecture.",
+  "completedStatus": "Completed",
+  "studentsLabel": "Students",
+  "responsesOfTotal": "Responses: {received}/{total}",
+  "@responsesOfTotal": {
+    "placeholders": {
+      "received": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceRateLabel": "Practice Rate: {percent}%",
+  "@practiceRateLabel": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "totalRequestsLabel": "{count} Total Requests",
+  "@totalRequestsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "thisCourseRequests": "This Course: {count}",
+  "@thisCourseRequests": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "understandingBreakdown": "Understanding Breakdown",
+  "studentResponsesCount": "Student Responses ({count})",
+  "@studentResponsesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "understoodPerfectly": "Understood perfectly",
+  "understoodMost": "Understood most",
+  "understoodSome": "Understood some",
+  "needMoreHelp": "Need more help",
+  "practicedBadge": "Practiced",
+  "notPracticedBadge": "Not Practiced",
+  "meetingShort": "Meeting",
+  "yesLabel": "Yes",
+  "noLabel": "No",
+  "showLess": "Show less",
+  "needHelpInsight": "{count} students ({percent}%) need more help on this topic. Consider revising examples and practice.",
+  "@needHelpInsight": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "understandingSummary": "Understanding feedback",
+  "feedbackCountLabel": "{count} responses",
+  "@feedbackCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noFeedbackYet": "No student feedback yet.",
+  "changeFeedback": "Change feedback",
+  "liveSessionEndFailed": "Could not end the lecture. Try again.",
+  "liveTopic": "Live: {topic}",
+  "@liveTopic": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "liveNow": "LIVE",
+  "lectureComplete": "ENDED",
+  "plannedDuration": "Planned",
+  "sessionDetails": "Session details",
+  "startTime": "Start time",
+  "studentsPresent": "{count} Present",
+  "@studentsPresent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "attendance": "Attendance",
+  "attendeesCount": "Attendees ({count})",
+  "@attendeesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noStudentsYet": "No students have joined yet.",
+  "youAreInClass": "You are in this lecture",
+  "waitingForStudents": "Waiting for students to join",
+  "teachingLiveHint": "You are currently teaching live",
+  "attendingLiveHint": "You are currently attending live",
+  "lectureInformation": "Lecture Information",
+  "currentTopic": "Current Topic",
+  "estimatedEnd": "Estimated End",
+  "topicLiveHint": "This topic is live and visible to all enrolled students.",
+  "joinedAt": "Joined at {time}",
+  "@joinedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "scheduleLabel": "Schedule",
+  "totalStudents": "Students",
+  "creditsShort": "Credits",
+  "liveChatSoon": "Live chat will open from here next.",
+  "livePollSoon": "Live polls will open from here next.",
+  "liveChat": "Chat",
+  "livePoll": "Poll",
+  "pointsLabel": "{count} pts",
+  "@pointsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lectureSummaryTitle": "Lecture Summary",
+  "lectureSummarySubtitle": "Review this lecture before viewing student feedback.",
+  "viewStudentFeedback": "View student feedback",
+  "endTime": "End time",
+  "actualDuration": "Actual duration",
+  "lectureSummarySaveFailed": "Could not save the lecture summary. Try again.",
+  "taughtNotesLabel": "What did you teach today?",
+  "taughtNotesHint": "Add a short note about what you covered in this lecture.",
+  "taughtNotesRequired": "Please enter what you taught today.",
+  "backToDashboard": "Back to Dashboard",
+  "aiPracticeScreenTitle": "Practice with AI",
+  "aiQuizResultsTitle": "AI Quiz Results",
+  "inProgressStatus": "IN PROGRESS",
+  "completedBadgeCaps": "COMPLETED",
+  "topicPrefix": "Topic: {topic}",
+  "@topicPrefix": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "aiPracticeAnswerAll": "Please answer all 5 questions below before submitting.",
+  "questionOfTotal": "QUESTION {current} OF {total}",
+  "@questionOfTotal": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "submitQuiz": "SUBMIT QUIZ",
+  "quizCompletedTitle": "Quiz Completed!",
+  "quizPassedMessage": "Great effort! You have passed this interactive review module successfully.",
+  "quizFailedMessage": "Review the explanations and try again to strengthen what you missed.",
+  "passedBadge": "PASSED",
+  "needsReviewBadge": "NEEDS REVIEW",
+  "totalQuestionsLabel": "TOTAL QUESTIONS",
+  "correctAnswersLabel": "CORRECT ANSWERS",
+  "wrongAnswersLabel": "WRONG ANSWERS",
+  "aiTutorBadge": "AI TUTOR",
+  "diagnosticTitle": "Diagnostic Evaluation & Guidance",
+  "reviewExplanations": "Review Question Explanations",
+  "practiceAgain": "Practice Again",
+  "endPractice": "End Practice",
+  "resultsSecureHint": "Your performance has been evaluated and committed securely.",
+  "aiPracticeUnsupported": "AI practice runs on the mobile app. This browser cannot load the on-device Qwen 2.5 0.5B model.",
+  "aiPracticeNoNotesTitle": "Lecture notes needed",
+  "aiPracticeNoNotes": "Your teacher has not saved notes for what was taught today, so a practice quiz cannot be generated yet. Ask them to save lecture notes, then try again.",
+  "aiPracticeNoBelow50Title": "No slides below 50%",
+  "aiPracticeNoBelow50": "Practice questions come only from slides you marked below 50%. You have not marked any slide below 50% for this lecture, so there is no quiz yet.",
+  "aiPracticeSourceChapter": "Chapter: {chapter}",
+  "@aiPracticeSourceChapter": {
+    "placeholders": {
+      "chapter": {
+        "type": "String"
+      }
+    }
+  },
+  "aiPracticeSourceLecture": "Lecture: {lecture}",
+  "@aiPracticeSourceLecture": {
+    "placeholders": {
+      "lecture": {
+        "type": "String"
+      }
+    }
+  },
+  "aiPracticeSourceSlide": "Slide: {slide}",
+  "@aiPracticeSourceSlide": {
+    "placeholders": {
+      "slide": {
+        "type": "String"
+      }
+    }
+  },
+  "aiPracticeSourceTopic": "Topic: {topic}",
+  "@aiPracticeSourceTopic": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "aiPracticeDownloadTitle": "Preparing on-device AI",
+  "aiPracticeDownloadHint": "Downloading Qwen 2.5 0.5B for private, on-device practice. This happens once.",
+  "aiPracticeGenerating": "Writing 5 questions from today's lecture notes…",
+  "aiPracticeGenerateFailed": "Could not generate a quiz. Try again.",
+  "aiPracticeRetry": "Try again",
+  "aiPracticeSubmitIncomplete": "Answer every question before submitting.",
+  "aiPracticeSaveFailed": "Could not save your practice attempt.",
+  "explanationCorrectLabel": "Correct answer",
+  "explanationYourAnswer": "Your answer",
+  "optionLetter": "{letter}",
+  "teacherAnalytics": "Teacher Analytics",
+  "teacherAnalyticsHint": "See understanding, AI practice, and meetings.",
+  "teacherAnalyticsSubtitle": "Spot hard topics and students who need support.",
+  "analyticsOverview": "Overview",
+  "analyticsUnderstanding": "Understanding",
+  "analyticsPractice": "AI practice",
+  "analyticsMeetings": "Meetings",
+  "analyticsAverage": "Average {value}%",
+  "@analyticsAverage": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsResponses": "{count} responses",
+  "@analyticsResponses": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsParticipation": "{percent}% participation",
+  "@analyticsParticipation": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsCompletion": "{percent}% completion",
+  "@analyticsCompletion": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsAverageScore": "Avg score {value}%",
+  "@analyticsAverageScore": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsMeetingTotal": "{count} requests",
+  "@analyticsMeetingTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsTopicOverview": "Topic Overview",
+  "analyticsCombinedLectures": "{count} lectures combined",
+  "@analyticsCombinedLectures": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsTotalStudents": "Total Students",
+  "analyticsTotalResponses": "Total Responses",
+  "analyticsAvgUnderstanding": "Avg. Understanding",
+  "analyticsUnderstandingDistribution": "Understanding Level Distribution",
+  "analyticsStudentPerformance": "Student Performance & Details",
+  "analyticsSearchStudent": "Search student...",
+  "analyticsOnTrack": "On Track",
+  "analyticsNeedsAttention": "Needs Attention",
+  "analyticsMeetingYes": "Yes",
+  "analyticsMeetingNo": "No",
+  "analyticsSelectTopicHint": "Select a course, chapter, and topic to see combined analytics for every lecture on that topic.",
+  "analyticsByTopic": "Understanding by topic",
+  "analyticsBySession": "Understanding by session",
+  "analyticsNeedsSupport": "Students needing support",
+  "analyticsLowUnderstanding": "Low understanding",
+  "analyticsIncompletePractice": "Have not practiced",
+  "analyticsPendingMeetings": "Pending meetings",
+  "analyticsAllCourses": "All courses",
+  "analyticsAllChapters": "All chapters",
+  "analyticsAllTopics": "All topics",
+  "analyticsAllTime": "All time",
+  "analyticsLast7Days": "Last 7 days",
+  "analyticsLast30Days": "Last 30 days",
+  "analyticsCustomRange": "Custom dates",
+  "analyticsFromDate": "From",
+  "analyticsToDate": "To",
+  "analyticsEmptyTitle": "No analytics yet",
+  "analyticsEmpty": "After students submit feedback, practice, or request meetings, their results will appear here.",
+  "analyticsLoadFailed": "Could not load analytics. Try again.",
+  "analyticsPracticeUnavailable": "AI practice stats are unavailable right now. Understanding and meetings are still shown.",
+  "analyticsRetry": "Try again",
+  "analyticsNoBars": "No understanding data for this filter.",
+  "analyticsNoStudents": "No students in this list.",
+  "analyticsResponsesShort": "{count} responses · {value}%",
+  "@analyticsResponsesShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "analyticsChapterFilter": "Chapter",
+  "analyticsTopicFilter": "Topic",
+  "dateRangeLabel": "Date range",
+  "aiPracticesEmpty": "No ended lectures yet. After your teacher finishes a class with notes, practice will show up here.",
+  "aiPracticeColorLegendTooltip": "Color meaning",
+  "aiPracticeColorLegendTitle": "Color meaning",
+  "aiPracticeColorLegendSubtitle": "The colors show how many AI practices are used.",
+  "aiPracticeColorNone": "0 AI practice",
+  "aiPracticeColorFew": "1 or 2 AI practice",
+  "aiPracticeColorMany": "3+ AI practice",
+  "aiPracticeColorRed": "red",
+  "aiPracticeColorYellow": "yellow",
+  "aiPracticeColorTeal": "teal",
+  "lectureAnalytics": "Lecture Analytics",
+  "lectureAnalyticsHint": "See how students engaged with each lecture.",
+  "remove": "Remove",
+  "@remove": {
+    "description": "Remove action label"
+  },
+  "enrolledStudents": "Enrolled Students",
+  "@enrolledStudents": {
+    "description": "Course details link and enrolled list title"
+  },
+  "enrolledStudentsHint": "View and manage students enrolled in this course.",
+  "@enrolledStudentsHint": {
+    "description": "Subtitle under Enrolled Students card"
+  },
+  "enrolledStudentsCount": "{count} enrolled",
+  "@enrolledStudentsCount": {
+    "description": "Count label above enrolled students list",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tapToViewProfile": "Tap to view profile",
+  "@tapToViewProfile": {
+    "description": "Hint under student name on enrolled list"
+  },
+  "noEnrolledStudentsYet": "No students are enrolled in this course yet.",
+  "@noEnrolledStudentsYet": {
+    "description": "Empty enrolled students list"
+  },
+  "removeEnrolledStudent": "Remove student",
+  "@removeEnrolledStudent": {
+    "description": "Dialog title for removing enrolled student"
+  },
+  "removeEnrolledStudentConfirm": "Remove {name} from this course? They will need to request to join again.",
+  "@removeEnrolledStudentConfirm": {
+    "description": "Confirm removing an enrolled student",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeEnrolledStudentFailed": "Could not remove the student. Try again.",
+  "@removeEnrolledStudentFailed": {
+    "description": "Error toast when remove fails"
+  },
+  "studentRemovedFromCourse": "{name} was removed from this course.",
+  "@studentRemovedFromCourse": {
+    "description": "Success toast after removing student",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "lectureAnalyticsSubtitle": "See how your students engaged with this lecture.",
+  "courseLecturesTitle": "Course Lectures",
+  "courseLecturesEmpty": "No lectures yet for this course. After you run a live lecture, it will appear here.",
+  "lectureAnalyticsNote": "After the lecture ends you can see how many students understood the topic, completed AI practice, and requested a meeting.",
+  "backToLectures": "Back to Lectures",
+  "viewAllRequests": "View All Requests",
+  "totalRequestsThisLecture": "{count} Total Requests This Lecture",
+  "@totalRequestsThisLecture": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "studentsCountLabel": "{count} Students",
+  "@studentsCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "understandingSection": "1. Understanding",
+  "aiPracticeSection": "2. AI Practice",
+  "meetingsSection": "3. Meetings",
+  "lectureMeetingsHubTitle": "Lecture Meetings",
+  "lectureMeetingsHubSubtitle": "Requests for this lecture only.",
+  "pendingRequests": "Pending requests",
+  "scheduledMeetings": "Scheduled meetings",
+  "attendedMeetings": "Attended",
+  "noMeetingsForLecture": "No meeting requests for this lecture yet.",
+  "noPendingMeetingsForLecture": "No pending requests for this lecture.",
+  "noScheduledMeetingsForLecture": "No scheduled meetings for this lecture.",
+  "noAttendedMeetingsForLecture": "No attended meetings for this lecture.",
+  "understandingDetailTitle": "Understanding Details",
+  "aiPracticeDetailTitle": "AI Practice Details",
+  "understandingDetailHint": "See how each student understood this lecture",
+  "aiPracticeDetailHint": "See which students practiced this lecture",
+  "noPracticeAttemptsYet": "No AI practice attempts for this lecture yet.",
+  "understandingOverview": "Understanding Overview",
+  "practiceOverview": "AI Practice Overview",
+  "meetingsOverview": "Meetings Overview",
+  "totalResponsesLabel": "Total Responses",
+  "totalPracticeLabel": "Total Practice",
+  "totalMeetingsLabel": "Total Meetings",
+  "searchStudentHint": "Search student...",
+  "noStudentsInLevel": "No students in this understanding level.",
+  "noStudentsInPracticeGroup": "No students in this practice group.",
+  "noMatchingStudents": "No students match your search.",
+  "noMeetingsInBucket": "No meetings in this category.",
+  "noMatchingMeetings": "No meetings match your search.",
+  "studentsHeadingCount": "Students ({count})",
+  "@studentsHeadingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "meetingsHeadingCount": "Meetings ({count})",
+  "@meetingsHeadingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "meetingsCountLabel": "{count} Meetings",
+  "@meetingsCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "meetingsDetailTitle": "Meetings Details",
+  "meetingsDetailHint": "See meeting requests for this lecture",
+  "meetingBucketPending": "Pending",
+  "meetingBucketScheduled": "Scheduled",
+  "meetingBucketAttended": "Attended",
+  "studentProfileTitle": "Student Profile",
+  "thisLectureUnderstanding": "Understanding for this lecture",
+  "teacherUnderstandingAnalyticsTitle": "Understanding Analytics",
+  "teacherPracticeAnalyticsTitle": "AI Practice Analytics",
+  "teacherPracticeAnalyticsHint": "See practice across your filtered lectures",
+  "teacherMeetingsAnalyticsTitle": "Meetings Analytics",
+  "teacherMeetingsAnalyticsHint": "See meetings across your current filters",
+  "noTeacherPracticeAttemptsYet": "No AI practice attempts for this filter yet.",
+  "noTeacherMeetingsYet": "No meeting requests for this filter yet.",
+  "openFile": "Open",
+  "downloadFile": "Download",
+  "fileOpenFailed": "Could not open that file.",
+  "fileDownloadFailed": "Could not download that file. Try again.",
+  "fileDownloadSaved": "Saved to {path}",
+  "@fileDownloadSaved": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "joiningRequests": "Joining Requests",
+  "noJoiningRequests": "No pending course join requests.",
+  "joinCourse": "Join Course",
+  "requestSentTag": "Request sent",
+  "courseJoinedTag": "Course joined",
+  "acceptJoinRequest": "Accept",
+  "rejectJoinRequest": "Reject",
+  "joinRequestAccepted": "Student joined the course.",
+  "joinRequestRejected": "Join request rejected.",
+  "joinRequestActionFailed": "Could not update that request. Try again.",
+  "invalidPhoneNumber": "Enter a valid phone number",
+  "@invalidPhoneNumber": {
+    "description": "Validation error when phone number length is wrong"
+  },
+  "verify": "Verify",
+  "@verify": {
+    "description": "Label for the OTP verify button"
+  },
+  "otpSentToPhone": "We sent a code to {contact}",
+  "@otpSentToPhone": {
+    "description": "Subtitle on the phone OTP screen",
+    "placeholders": {
+      "contact": {
+        "type": "String",
+        "example": "+923001234567"
+      }
+    }
+  },
+  "otpSmsSent": "A new code was sent to {contact}",
+  "@otpSmsSent": {
+    "description": "Snackbar shown after resending an SMS OTP",
+    "placeholders": {
+      "contact": {
+        "type": "String",
+        "example": "+923001234567"
+      }
+    }
+  },
+  "otpAttemptsRemaining": "{count} attempts remaining",
+  "@otpAttemptsRemaining": {
+    "description": "Shown below the OTP field while attempts are left",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "otpAttemptsExhausted": "Too many attempts. Please resend the code.",
+  "@otpAttemptsExhausted": {
+    "description": "Shown when all 5 OTP attempts are used up"
+  },
+  "otpInvalidWithAttempts": "Invalid code. {count} attempts left",
+  "@otpInvalidWithAttempts": {
+    "description": "Snackbar shown after a wrong OTP, with attempts remaining",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "resendInSeconds": "Resend in {seconds}s",
+  "@resendInSeconds": {
+    "description": "Resend button label during the cooldown countdown",
+    "placeholders": {
+      "seconds": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "otpInvalidCode": "The code you entered is incorrect",
+  "@otpInvalidCode": {
+    "description": "AuthException message for AuthException.invalidOtp"
+  },
+  "otpExpiredCode": "This code has expired, please resend",
+  "@otpExpiredCode": {
+    "description": "AuthException message for AuthException.otpExpired"
+  },
+  "didntReceiveCode": "Didn't receive the code?",
+  "@didntReceiveCode": {
+    "description": "Text next to the resend button on the OTP screen"
+  },
+  "verifyPhoneTitle": "Check your phone",
+  "verifyPhoneBody": "Enter the 6-digit code we sent by SMS to {phone}.",
+  "@verifyPhoneBody": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "phoneVerifiedPleaseLogin": "Phone verified. Please log in.",
+  "emailOrPhoneHint": "Email or phone with country code",
+  "invalidEmailOrPhone": "Enter a valid email or country code",
+  "topicFilesRequired": "Upload at least one slide or file for this topic.",
+  "topicFilesRequiredHint": "Slides/files required (PDF, Word, or PowerPoint).",
+  "topicSlides": "Slides",
+  "previousPage": "Previous page",
+  "nextPage": "Next page",
+  "slidePageOf": "Page {current} of {total}",
+  "@slidePageOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "slideFileOf": "File {current} of {total}",
+  "@slideFileOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "slideFilePageOf": "File {file} of {files} · Page {page} of {pages}",
+  "@slideFilePageOf": {
+    "placeholders": {
+      "file": {
+        "type": "int"
+      },
+      "files": {
+        "type": "int"
+      },
+      "page": {
+        "type": "int"
+      },
+      "pages": {
+        "type": "int"
+      }
+    }
+  },
+  "slidesLoadFailed": "Could not load this file.",
+  "slidesOpenExternally": "This file type opens outside the app.",
+  "noTopicSlides": "No slides uploaded for this topic.",
+  "followingTeacher": "Following teacher",
+  "liveSlideHowClear": "How clear is this slide?",
+  "liveSlideSignalsTitle": "Live slide understanding",
+  "liveSlideSignalSaved": "Saved for this slide",
+  "liveSlideNoSignals": "No student feedback has been submitted yet.",
+  "liveSlideOnPage": "Slide {page}",
+  "@liveSlideOnPage": {
+    "placeholders": {
+      "page": { "type": "int" }
+    }
+  },
+  "liveSlideOnFilePage": "File {file} · Slide {page}",
+  "@liveSlideOnFilePage": {
+    "placeholders": {
+      "file": { "type": "int" },
+      "page": { "type": "int" }
+    }
+  },
+  "liveSlideNeedHelpCount": "{count} need help on this slide",
+  "@liveSlideNeedHelpCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "liveSlideSignalFailed": "Could not save slide feedback. Try again.",
+  "studentSlideFeedbackSummaryTitle": "Your slide feedback",
+  "studentSlideFeedbackSummarySubtitle": "Review how you rated each slide during the lecture.",
+  "studentSlideFeedbackEmpty": "You did not leave feedback on any slides during this lecture.",
+  "studentSlideFeedbackNext": "Next",
+  "lectureSummaryTitleNumbered": "Lecture {number} Summary",
+  "@lectureSummaryTitleNumbered": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "studentSlideFeedbackSummaryTitleNumbered": "Lecture {number} slide feedback",
+  "@studentSlideFeedbackSummaryTitleNumbered": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lectureEndTitleNumbered": "Lecture {number} ended",
+  "@lectureEndTitleNumbered": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceWithAiTitleNumbered": "Practice Lecture {number} with AI Assistant",
+  "@practiceWithAiTitleNumbered": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "lectureNumber": "Lecture {number}",
+  "@lectureNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "liveFocusModeBanner": "Focus mode on — stay in LEARNsync until the lecture ends. Other apps, calls, and notifications are not fully blocked by the OS.",
+  "liveFocusModeAndroidHint": "Focus mode: screen stays on, screenshots blocked, and Android may ask to pin this app. Allow Do Not Disturb access to silence notifications (calls still may ring without MDM).",
+  "liveFocusModeIosHint": "Focus mode: screen stays on. iOS cannot block other apps, calls, or notifications from this app — use Guided Access (Settings > Accessibility) for a stronger lockdown.",
+  "liveFocusOpenDndSettings": "DND access",
+  "liveFocusLeftAppWarn": "You left LEARNsync during the live lecture. Your teacher can see you as away. Return and stay in the lecture.",
+  "liveFocusStayTitle": "Lecture in progress",
+  "liveFocusStayBody": "Stay in this screen until your teacher ends the lecture. Leaving early is visible to the teacher.",
+  "liveFocusStudentAway": "Away (left app)",
+  "liveFollowTeacher": "Follow teacher",
+  "jumpToSlide": "Jump to slide",
+  "slideNumber": "Slide number",
+  "slideNumberOutOfRange": "Enter a slide number between 1 and {count}.",
+  "@slideNumberOutOfRange": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  }
+}

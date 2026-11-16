@@ -1,0 +1,911 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function hasAppRole() {
+      return request.resource.data.role in ['teacher', 'student'];
+    }
+
+    function isCourseTeacher(courseId) {
+      return signedIn()
+        && get(/databases/$(database)/documents/courses/$(courseId)).data.teacherId
+          == request.auth.uid;
+    }
+
+    function validNewLiveSession(data) {
+      return data.keys().hasOnly([
+          'chapterId',
+          'chapterTitle',
+          'topicId',
+          'topicTitle',
+          'teacherId',
+          'durationMinutes',
+          'status',
+          'startedAt',
+          'endedAt',
+          'createdAt'
+        ])
+        && data.chapterId is string
+        && data.chapterId.size() > 0
+        && data.chapterId.size() <= 128
+        && data.chapterTitle is string
+        && data.chapterTitle.size() > 0
+        && data.chapterTitle.size() <= 80
+        && data.topicId is string
+        && data.topicId.size() > 0
+        && data.topicId.size() <= 128
+        && data.topicTitle is string
+        && data.topicTitle.size() > 0
+        && data.topicTitle.size() <= 80
+        && data.teacherId == request.auth.uid
+        && data.durationMinutes is int
+        && data.durationMinutes >= 1
+        && data.durationMinutes <= 480
+        && data.status == 'active'
+        && data.startedAt == request.time
+        && data.createdAt == request.time
+        && data.endedAt == null;
+    }
+
+    function activeSessionId(data) {
+      return 'activeSessionId' in data ? data.activeSessionId : '';
+    }
+
+    function validCourseLiveTransition(courseId) {
+      let oldId = activeSessionId(resource.data);
+      let newId = activeSessionId(request.resource.data);
+      let liveFieldsChanged = request.resource.data.diff(resource.data)
+        .affectedKeys().hasAny(['activeSessionId', 'isLive']);
+      return !liveFieldsChanged
+        || (
+          oldId == ''
+          && newId is string
+          && newId.size() > 0
+          && newId.size() <= 128
+          && request.resource.data.isLive == true
+          && getAfter(/databases/$(database)/documents/courses/$(courseId)/liveSessions/$(newId))
+            .data.status == 'active'
+        )
+        || (
+          oldId != ''
+          && newId == ''
+          && request.resource.data.isLive == false
+          && getAfter(/databases/$(database)/documents/courses/$(courseId)/liveSessions/$(oldId))
+            .data.status == 'ended'
+        );
+    }
+
+    match /users/{uid} {
+      allow read: if signedIn();
+      allow create: if isSelf(uid) && hasAppRole();
+      allow update: if isSelf(uid)
+        && (
+          !('memberId' in resource.data)
+          || request.resource.data.memberId == resource.data.memberId
+        );
+      allow delete: if isSelf(uid);
+
+      match /avatar/{docId} {
+        allow read: if signedIn();
+        allow write, delete: if isSelf(uid);
+      }
+    }
+
+    match /memberIds/{memberId} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.emailLower is string
+        && request.resource.data.memberId is string;
+      allow update: if signedIn()
+        && resource.data.uid == request.auth.uid
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.emailLower == resource.data.emailLower
+        && request.resource.data.memberId == resource.data.memberId;
+      allow delete: if signedIn()
+        && resource.data.uid == request.auth.uid;
+    }
+
+
+    // Phone password hashes — Admin SDK / Cloud Functions only.
+    match /phoneCredentials/{uid} {
+      allow read, write: if false;
+    }
+
+    match /roles/{roleId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    match /mail/{mailId} {
+      allow read, write: if false;
+    }
+
+    match /signupOtps/{otpId} {
+      allow read, write: if false;
+    }
+
+    match /courses/{courseId} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.teacherId == request.auth.uid
+        && request.resource.data.createdBy == request.auth.uid;
+      allow update: if signedIn()
+        && resource.data.teacherId == request.auth.uid
+        && validCourseLiveTransition(courseId);
+      allow delete: if signedIn()
+        && resource.data.teacherId == request.auth.uid;
+
+      match /chapters/{chapterId} {
+        allow read: if signedIn();
+        allow write: if signedIn()
+          && get(/databases/$(database)/documents/courses/$(courseId)).data.teacherId
+            == request.auth.uid;
+
+        match /topics/{topicId} {
+          allow read: if signedIn();
+          allow write: if signedIn()
+            && get(/databases/$(database)/documents/courses/$(courseId)).data.teacherId
+              == request.auth.uid;
+        }
+      }
+
+
+      // Course enrollment requests (not live-session joinRequests).
+      match /joinRequests/{studentUid} {
+        allow read: if signedIn() && request.auth.uid == studentUid;
+        allow read: if signedIn() && isCourseTeacher(courseId);
+        allow create: if signedIn()
+          && request.auth.uid == studentUid
+          && request.resource.data.studentId == studentUid
+          && request.resource.data.studentName is string
+          && request.resource.data.studentName.size() > 0
+          && request.resource.data.studentName.size() <= 80
+          && request.resource.data.courseId == courseId
+          && request.resource.data.status == 'pending'
+          && request.resource.data.requestedAt == request.time
+          && !('respondedAt' in request.resource.data);
+        allow update: if signedIn()
+          && isCourseTeacher(courseId)
+          && resource.data.status == 'pending'
+          && request.resource.data.status in ['accepted', 'declined']
+          && request.resource.data.studentId == resource.data.studentId
+          && request.resource.data.respondedAt == request.time
+          && request.resource.data.diff(resource.data).affectedKeys()
+            .hasOnly(['status', 'respondedAt'])
+          && (
+            request.resource.data.status == 'declined'
+            || existsAfter(
+              /databases/$(database)/documents/courses/$(courseId)/members/$(studentUid)
+            )
+          );
+        // A declined doc left behind by an older reject blocks create.
+        // The student may reopen that same doc as a new pending request.
+        allow update: if signedIn()
+          && request.auth.uid == studentUid
+          && resource.data.status == 'declined'
+          && resource.data.studentId == studentUid
+          && request.resource.data.studentId == studentUid
+          && request.resource.data.courseId == courseId
+          && request.resource.data.status == 'pending'
+          && request.resource.data.studentName is string
+          && request.resource.data.studentName.size() > 0
+          && request.resource.data.studentName.size() <= 80
+          && request.resource.data.requestedAt == request.time
+          && !('respondedAt' in request.resource.data)
+          && request.resource.data.diff(resource.data).affectedKeys()
+            .hasOnly([
+              'studentId',
+              'studentName',
+              'courseId',
+              'courseName',
+              'courseCode',
+              'studentEmail',
+              'memberId',
+              'status',
+              'requestedAt',
+              'respondedAt',
+            ]);
+        allow delete: if signedIn() && isCourseTeacher(courseId);
+      }
+
+      match /members/{studentUid} {
+        allow read: if signedIn()
+          && (request.auth.uid == studentUid || isCourseTeacher(courseId));
+        allow create: if signedIn()
+          && isCourseTeacher(courseId)
+          && request.resource.data.studentId == studentUid;
+        allow update, delete: if signedIn() && isCourseTeacher(courseId);
+      }
+
+      match /liveSessions/{sessionId} {
+        allow read: if signedIn();
+        allow create: if signedIn()
+          && isCourseTeacher(courseId)
+          && validNewLiveSession(request.resource.data)
+          && activeSessionId(
+            get(/databases/$(database)/documents/courses/$(courseId)).data
+          ) == ''
+          && getAfter(/databases/$(database)/documents/courses/$(courseId))
+            .data.activeSessionId == sessionId
+          && getAfter(/databases/$(database)/documents/courses/$(courseId))
+            .data.isLive == true
+          && (
+            !('activeLiveSessionId' in get(/databases/$(database)/documents/users/$(request.auth.uid)).data)
+            || get(/databases/$(database)/documents/users/$(request.auth.uid)).data.activeLiveSessionId == ''
+          )
+          && getAfter(/databases/$(database)/documents/users/$(request.auth.uid))
+            .data.activeLiveSessionId == sessionId
+          && getAfter(/databases/$(database)/documents/users/$(request.auth.uid))
+            .data.activeLiveCourseId == courseId;
+        allow update: if signedIn()
+          && isCourseTeacher(courseId)
+          && resource.data.teacherId == request.auth.uid
+          && request.resource.data.teacherId == resource.data.teacherId
+          && (
+            (
+              resource.data.status == 'active'
+              && request.resource.data.status == 'ended'
+              && request.resource.data.endedAt == request.time
+              && request.resource.data.diff(resource.data).affectedKeys()
+                .hasOnly(['status', 'endedAt'])
+              && getAfter(/databases/$(database)/documents/courses/$(courseId))
+                .data.activeSessionId == ''
+              && getAfter(/databases/$(database)/documents/courses/$(courseId))
+                .data.isLive == false
+              && getAfter(/databases/$(database)/documents/users/$(request.auth.uid))
+                .data.activeLiveSessionId == ''
+              && getAfter(/databases/$(database)/documents/users/$(request.auth.uid))
+                .data.activeLiveCourseId == ''
+            )
+            || (
+              resource.data.status == 'active'
+              && request.resource.data.status == 'active'
+              && request.resource.data.diff(resource.data).affectedKeys()
+                .hasOnly(['slideFileIndex', 'slidePage', 'slideUpdatedAt'])
+              && request.resource.data.slideFileIndex is int
+              && request.resource.data.slideFileIndex >= 0
+              && request.resource.data.slideFileIndex <= 200
+              && request.resource.data.slidePage is int
+              && request.resource.data.slidePage >= 1
+              && request.resource.data.slidePage <= 5000
+              && request.resource.data.slideUpdatedAt == request.time
+            )
+            || (
+              // Teacher-only live zoom/pan sync (slide viewport).
+              // May also bump slideFileIndex/slidePage so page+zoom stay atomic.
+              resource.data.status == 'active'
+              && request.resource.data.status == 'active'
+              && request.resource.data.diff(resource.data).affectedKeys()
+                .hasOnly([
+                  'slideView',
+                  'slideViewUpdatedAt',
+                  'slideFileIndex',
+                  'slidePage',
+                  'slideUpdatedAt',
+                ])
+              && request.resource.data.slideView is map
+              && request.resource.data.slideView.keys()
+                .hasOnly(['fileIndex', 'page', 'zoom', 'cx', 'cy', 'ts'])
+              && request.resource.data.slideView.fileIndex is int
+              && request.resource.data.slideView.fileIndex >= 0
+              && request.resource.data.slideView.fileIndex <= 200
+              && request.resource.data.slideView.page is int
+              && request.resource.data.slideView.page >= 1
+              && request.resource.data.slideView.page <= 5000
+              && request.resource.data.slideView.zoom is number
+              && request.resource.data.slideView.zoom > 0
+              && request.resource.data.slideView.zoom <= 20
+              && request.resource.data.slideView.cx is number
+              && request.resource.data.slideView.cx >= -1
+              && request.resource.data.slideView.cx <= 2
+              && request.resource.data.slideView.cy is number
+              && request.resource.data.slideView.cy >= -1
+              && request.resource.data.slideView.cy <= 2
+              && request.resource.data.slideView.ts is int
+              && request.resource.data.slideViewUpdatedAt == request.time
+              && (
+                !request.resource.data.diff(resource.data).affectedKeys()
+                  .hasAny(['slideFileIndex', 'slidePage', 'slideUpdatedAt'])
+                || (
+                  request.resource.data.slideFileIndex is int
+                  && request.resource.data.slideFileIndex >= 0
+                  && request.resource.data.slideFileIndex <= 200
+                  && request.resource.data.slidePage is int
+                  && request.resource.data.slidePage >= 1
+                  && request.resource.data.slidePage <= 5000
+                  && request.resource.data.slideUpdatedAt == request.time
+                )
+              )
+            )
+            || (
+              // Teacher may switch the live session to a newly added topic.
+              resource.data.status == 'active'
+              && request.resource.data.status == 'active'
+              && request.resource.data.diff(resource.data).affectedKeys()
+                .hasOnly(['topicId', 'topicTitle', 'topicUpdatedAt'])
+              && request.resource.data.topicId is string
+              && request.resource.data.topicId.size() > 0
+              && request.resource.data.topicId.size() <= 128
+              && request.resource.data.topicTitle is string
+              && request.resource.data.topicTitle.size() > 0
+              && request.resource.data.topicTitle.size() <= 80
+              && request.resource.data.topicUpdatedAt == request.time
+            )
+          );
+        allow delete: if signedIn()
+          && isCourseTeacher(courseId)
+          && resource.data.teacherId == request.auth.uid;
+
+        match /joinRequests/{studentUid} {
+          allow read: if signedIn() && request.auth.uid == studentUid;
+          allow read: if signedIn() && isCourseTeacher(courseId);
+          allow create: if signedIn()
+            && request.auth.uid == studentUid
+            && request.resource.data.studentId == studentUid
+            && request.resource.data.studentName is string
+            && request.resource.data.studentName.size() > 0
+            && request.resource.data.studentName.size() <= 80
+            && request.resource.data.studentEmail is string
+            && request.resource.data.studentEmail.size() <= 120
+            && request.resource.data.memberId is string
+            && request.resource.data.memberId.size() <= 64
+            && request.resource.data.status == 'pending'
+            && request.resource.data.requestedAt == request.time
+            && !('respondedAt' in request.resource.data)
+            && get(/databases/$(database)/documents/courses/$(courseId)/liveSessions/$(sessionId))
+              .data.status == 'active';
+          allow update: if signedIn()
+            && isCourseTeacher(courseId)
+            && resource.data.status == 'pending'
+            && request.resource.data.status == 'accepted'
+            && request.resource.data.studentId == resource.data.studentId
+            && request.resource.data.respondedAt == request.time
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['status', 'respondedAt'])
+            && existsAfter(
+              /databases/$(database)/documents/lectures/$(sessionId)/attendees/$(studentUid)
+            );
+          allow delete: if false;
+        }
+
+        match /slideSignals/{signalId} {
+          function validSlideSignalLevel(level) {
+            return level in ['100', '80', '60', 'below50'];
+          }
+
+          allow get: if signedIn() && (
+            !exists(/databases/$(database)/documents/courses/$(courseId)/liveSessions/$(sessionId)/slideSignals/$(signalId))
+            || resource.data.studentId == request.auth.uid
+            || isCourseTeacher(courseId)
+          );
+          allow list: if signedIn() && (
+            resource.data.studentId == request.auth.uid
+            || isCourseTeacher(courseId)
+          );
+          allow create: if signedIn()
+            && request.resource.data.studentId == request.auth.uid
+            && signalId.matches('^' + request.auth.uid + '_[0-9]+_[0-9]+$')
+            && request.resource.data.sessionId == sessionId
+            && request.resource.data.courseId == courseId
+            && request.resource.data.slideFileIndex is int
+            && request.resource.data.slideFileIndex >= 0
+            && request.resource.data.slideFileIndex <= 200
+            && request.resource.data.slidePage is int
+            && request.resource.data.slidePage >= 1
+            && request.resource.data.slidePage <= 5000
+            && validSlideSignalLevel(request.resource.data.level)
+            && request.resource.data.studentName is string
+            && request.resource.data.studentName.size() > 0
+            && request.resource.data.studentName.size() <= 80
+            && get(/databases/$(database)/documents/courses/$(courseId)/liveSessions/$(sessionId))
+              .data.status == 'active'
+            && exists(
+              /databases/$(database)/documents/lectures/$(sessionId)/attendees/$(request.auth.uid)
+            );
+          allow update: if signedIn()
+            && resource.data.studentId == request.auth.uid
+            && request.resource.data.studentId == resource.data.studentId
+            && request.resource.data.sessionId == resource.data.sessionId
+            && request.resource.data.courseId == resource.data.courseId
+            && request.resource.data.slideFileIndex == resource.data.slideFileIndex
+            && request.resource.data.slidePage == resource.data.slidePage
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['level', 'studentName', 'studentEmail', 'memberId', 'teacherId', 'updatedAt', 'createdAt'])
+            && validSlideSignalLevel(request.resource.data.level)
+            && get(/databases/$(database)/documents/courses/$(courseId)/liveSessions/$(sessionId))
+              .data.status == 'active';
+          allow delete: if false;
+        }
+      }
+
+      match /files/{fileId} {
+        allow read: if signedIn();
+        allow write: if signedIn()
+          && get(/databases/$(database)/documents/courses/$(courseId)).data.teacherId
+            == request.auth.uid;
+
+        match /chunks/{chunkId} {
+          allow read: if signedIn();
+          allow write: if signedIn()
+            && get(/databases/$(database)/documents/courses/$(courseId)).data.teacherId
+              == request.auth.uid;
+        }
+      }
+    }
+
+    match /lectures/{lectureId} {
+      function validLectureSummary(summary) {
+        return summary.keys().hasOnly([
+            'lectureId',
+            'sessionId',
+            'courseId',
+            'courseName',
+            'courseCode',
+            'department',
+            'semester',
+            'section',
+            'teacherId',
+            'teacherName',
+            'chapterId',
+            'chapterTitle',
+            'topicId',
+            'topicTitle',
+            'durationMinutes',
+            'actualDurationMinutes',
+            'attendeeCount',
+            'lectureDate',
+            'taughtNotes',
+            'savedAt'
+          ])
+          && summary.lectureId == lectureId
+          && summary.sessionId == lectureId
+          && summary.courseId == resource.data.courseId
+          && summary.teacherId == resource.data.teacherId
+          && summary.courseName == resource.data.courseName
+          && summary.teacherName == resource.data.teacherName
+          && summary.chapterId == resource.data.chapterId
+          && summary.chapterTitle == resource.data.chapterTitle
+          && summary.topicId == resource.data.topicId
+          && summary.topicTitle == resource.data.topicTitle
+          && summary.durationMinutes == resource.data.durationMinutes
+          && summary.actualDurationMinutes
+            == request.resource.data.actualDurationMinutes
+          && summary.attendeeCount is int
+          && summary.attendeeCount >= 0
+          && summary.attendeeCount <= 10000
+          && summary.attendeeCount == request.resource.data.studentCount
+          && summary.lectureDate == resource.data.lectureDate
+          && summary.courseCode is string
+          && summary.courseCode.size() <= 64
+          && summary.department is string
+          && summary.department.size() <= 120
+          && summary.semester is string
+          && summary.semester.size() <= 80
+          && summary.section is string
+          && summary.section.size() <= 40
+          && summary.taughtNotes is string
+          && summary.taughtNotes.size() <= 4000
+          && summary.savedAt == request.time;
+      }
+
+      // Students read a lecture by id. List is teacher-scoped for analytics.
+      allow get: if signedIn();
+      allow list: if signedIn() && resource.data.teacherId == request.auth.uid;
+      allow create: if signedIn()
+        && request.resource.data.teacherId == request.auth.uid
+        && request.resource.data.courseId is string
+        && request.resource.data.courseId.size() > 0
+        && request.resource.data.courseId.size() <= 128
+        && isCourseTeacher(request.resource.data.courseId)
+        && request.resource.data.status == 'active'
+        && request.resource.data.studentCount == 0
+        && request.resource.data.actualDurationMinutes == 0
+        && request.resource.data.startedAt == request.time
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.endedAt == null
+        && request.resource.data.courseName is string
+        && request.resource.data.courseName.size() > 0
+        && request.resource.data.courseName.size() <= 120
+        && request.resource.data.teacherName is string
+        && request.resource.data.teacherName.size() > 0
+        && request.resource.data.teacherName.size() <= 80
+        && request.resource.data.chapterId is string
+        && request.resource.data.chapterTitle is string
+        && request.resource.data.topicId is string
+        && request.resource.data.topicTitle is string
+        && request.resource.data.durationMinutes is int
+        && request.resource.data.durationMinutes >= 1
+        && request.resource.data.durationMinutes <= 480
+        && request.resource.data.lectureDate is string
+        && request.resource.data.sessionId == lectureId;
+      allow update: if signedIn()
+        && (
+          (
+            resource.data.teacherId == request.auth.uid
+            && isCourseTeacher(resource.data.courseId)
+            && resource.data.status == 'active'
+            && request.resource.data.status == 'ended'
+            && request.resource.data.endedAt == request.time
+            && request.resource.data.teacherId == resource.data.teacherId
+            && request.resource.data.courseId == resource.data.courseId
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['status', 'endedAt', 'actualDurationMinutes', 'studentCount'])
+            && request.resource.data.actualDurationMinutes is int
+            && request.resource.data.actualDurationMinutes >= 0
+            && request.resource.data.studentCount is int
+            && request.resource.data.studentCount >= 0
+          )
+          || (
+            resource.data.teacherId == request.auth.uid
+            && isCourseTeacher(resource.data.courseId)
+            && resource.data.status == 'active'
+            && request.resource.data.status == 'ended'
+            && request.resource.data.endedAt == request.time
+            && request.resource.data.teacherId == resource.data.teacherId
+            && request.resource.data.courseId == resource.data.courseId
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['status', 'endedAt', 'actualDurationMinutes', 'studentCount', 'summary'])
+            && request.resource.data.actualDurationMinutes is int
+            && request.resource.data.actualDurationMinutes >= 0
+            && request.resource.data.studentCount is int
+            && request.resource.data.studentCount >= 0
+            && validLectureSummary(request.resource.data.summary)
+          )
+          || (
+            (resource.data.status == 'active' || resource.data.status == 'ended')
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['studentCount'])
+            && request.resource.data.studentCount
+              == resource.data.studentCount + 1
+            && existsAfter(
+              /databases/$(database)/documents/lectures/$(lectureId)/attendees/$(request.auth.uid)
+            )
+          )
+          || (
+            resource.data.teacherId == request.auth.uid
+            && isCourseTeacher(resource.data.courseId)
+            && resource.data.status == 'ended'
+            && request.resource.data.status == 'ended'
+            && request.resource.data.teacherId == resource.data.teacherId
+            && request.resource.data.courseId == resource.data.courseId
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['summary'])
+            && validLectureSummary(request.resource.data.summary)
+          )
+          || (
+            resource.data.teacherId == request.auth.uid
+            && isCourseTeacher(resource.data.courseId)
+            && resource.data.status == 'ended'
+            && request.resource.data.status == 'ended'
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['taughtNotes'])
+            && request.resource.data.taughtNotes is string
+            && request.resource.data.taughtNotes.size() > 0
+            && request.resource.data.taughtNotes.size() <= 4000
+          )
+          || (
+            // Teacher may point an active lecture at a topic added during live.
+            resource.data.teacherId == request.auth.uid
+            && isCourseTeacher(resource.data.courseId)
+            && resource.data.status == 'active'
+            && request.resource.data.status == 'active'
+            && request.resource.data.teacherId == resource.data.teacherId
+            && request.resource.data.courseId == resource.data.courseId
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['topicId', 'topicTitle', 'topicUpdatedAt'])
+            && request.resource.data.topicId is string
+            && request.resource.data.topicId.size() > 0
+            && request.resource.data.topicId.size() <= 128
+            && request.resource.data.topicTitle is string
+            && request.resource.data.topicTitle.size() > 0
+            && request.resource.data.topicTitle.size() <= 80
+            && request.resource.data.topicUpdatedAt == request.time
+          )
+          || (
+            // Allow saving / repairing lecture notes while live (start-lecture path).
+            resource.data.teacherId == request.auth.uid
+            && isCourseTeacher(resource.data.courseId)
+            && resource.data.status == 'active'
+            && request.resource.data.status == 'active'
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['taughtNotes'])
+            && request.resource.data.taughtNotes is string
+            && request.resource.data.taughtNotes.size() > 0
+            && request.resource.data.taughtNotes.size() <= 4000
+          )
+        );
+      allow delete: if signedIn()
+        && resource.data.teacherId == request.auth.uid
+        && isCourseTeacher(resource.data.courseId);
+
+      match /attendees/{studentUid} {
+        allow read: if signedIn();
+        allow create: if signedIn()
+          && request.auth.uid == studentUid
+          && get(/databases/$(database)/documents/lectures/$(lectureId))
+            .data.status in ['active', 'ended']
+          && request.resource.data.studentId == studentUid
+          && request.resource.data.studentName is string
+          && request.resource.data.studentName.size() > 0
+          && request.resource.data.studentName.size() <= 80
+          && request.resource.data.studentEmail is string
+          && request.resource.data.studentEmail.size() <= 120
+          && request.resource.data.memberId is string
+          && request.resource.data.memberId.size() <= 64
+          && request.resource.data.joinedAt == request.time
+          && getAfter(/databases/$(database)/documents/lectures/$(lectureId))
+            .data.studentCount
+              == get(/databases/$(database)/documents/lectures/$(lectureId))
+                .data.studentCount + 1;
+        allow update: if signedIn()
+          && request.auth.uid == studentUid
+          && request.resource.data.diff(resource.data).affectedKeys()
+            .hasOnly(['inApp', 'lastSeenAt'])
+          && request.resource.data.studentId == resource.data.studentId
+          && request.resource.data.inApp is bool
+          && request.resource.data.lastSeenAt == request.time;
+        allow delete: if false;
+      }
+
+      match /teacherNotes/{noteId} {
+        function lectureTeacherId() {
+          return get(/databases/$(database)/documents/lectures/$(lectureId))
+            .data.teacherId;
+        }
+
+        function validTeacherNotes(data) {
+          return data.keys().hasOnly(['text', 'teacherId', 'updatedAt'])
+            && data.text is string
+            && data.text.size() > 0
+            && data.text.size() <= 4000
+            && data.teacherId == request.auth.uid
+            && data.teacherId == lectureTeacherId()
+            && data.updatedAt == request.time;
+        }
+
+        allow get: if signedIn();
+        allow list: if signedIn() && isCourseTeacher(
+          get(/databases/$(database)/documents/lectures/$(lectureId)).data.courseId
+        );
+        allow create, update: if signedIn()
+          && noteId == 'current'
+          && request.auth.uid == lectureTeacherId()
+          && isCourseTeacher(
+            get(/databases/$(database)/documents/lectures/$(lectureId)).data.courseId
+          )
+          && validTeacherNotes(request.resource.data);
+        allow delete: if false;
+      }
+
+      match /practiceAttempts/{attemptId} {
+        function lectureCourseId() {
+          return get(/databases/$(database)/documents/lectures/$(lectureId))
+            .data.courseId;
+        }
+
+        function validPracticeAttempt(data) {
+          return data.keys().hasOnly([
+              'lectureId',
+              'courseId',
+              'courseName',
+              'teacherId',
+              'studentId',
+              'studentName',
+              'topicTitle',
+              'chapterTitle',
+              'score',
+              'total',
+              'percent',
+              'passed',
+              'completed',
+              'selectedIndexes',
+              'diagnostic',
+              'questions',
+              'createdAt',
+              'completedAt'
+            ])
+            && data.lectureId == lectureId
+            && data.courseId == lectureCourseId()
+            && data.teacherId == get(/databases/$(database)/documents/lectures/$(lectureId))
+              .data.teacherId
+            && data.studentId == request.auth.uid
+            && data.studentName is string
+            && data.studentName.size() > 0
+            && data.studentName.size() <= 80
+            && data.topicTitle is string
+            && data.topicTitle.size() <= 80
+            && data.chapterTitle is string
+            && data.chapterTitle.size() <= 80
+            && data.courseName is string
+            && data.courseName.size() <= 120
+            && data.score is int
+            && data.score >= 0
+            && data.score <= 5
+            && data.total == 5
+            && data.percent is int
+            && data.percent >= 0
+            && data.percent <= 100
+            && data.passed is bool
+            && data.completed == true
+            && data.selectedIndexes is list
+            && data.selectedIndexes.size() == 5
+            && data.questions is list
+            && data.questions.size() == 5
+            && data.diagnostic is string
+            && data.diagnostic.size() <= 2000
+            && data.createdAt == request.time
+            && data.completedAt == request.time;
+        }
+
+        allow get: if signedIn() && (
+          !exists(/databases/$(database)/documents/lectures/$(lectureId)/practiceAttempts/$(attemptId))
+          || resource.data.studentId == request.auth.uid
+          || resource.data.teacherId == request.auth.uid
+          || isCourseTeacher(lectureCourseId())
+        );
+        // teacherId equality lets collectionGroup queries
+        // (.where('teacherId' == auth.uid)) pass security rules.
+        allow list: if signedIn() && (
+          resource.data.studentId == request.auth.uid
+          || resource.data.teacherId == request.auth.uid
+          || isCourseTeacher(lectureCourseId())
+        );
+        allow create: if signedIn()
+          && request.resource.data.studentId == request.auth.uid
+          && get(/databases/$(database)/documents/lectures/$(lectureId))
+            .data.status == 'ended'
+          && validPracticeAttempt(request.resource.data);
+        allow update, delete: if false;
+      }
+    }
+
+    match /feedback/{feedbackId} {
+      function validFeedbackLevel(level) {
+        return level in ['100', '80', '60', 'below50'];
+      }
+
+      // Non-existent docs must be readable so students can watch before first submit.
+      allow get: if signedIn() && (
+        !exists(/databases/$(database)/documents/feedback/$(feedbackId))
+        || resource.data.studentId == request.auth.uid
+        || resource.data.teacherId == request.auth.uid
+      );
+      allow list: if signedIn() && (
+        resource.data.studentId == request.auth.uid
+        || resource.data.teacherId == request.auth.uid
+      );
+
+      allow create: if signedIn()
+        && request.resource.data.studentId == request.auth.uid
+        && feedbackId == request.resource.data.lectureId + '_' + request.auth.uid
+        && request.resource.data.keys().hasAll([
+            'lectureId',
+            'sessionId',
+            'courseId',
+            'courseName',
+            'teacherId',
+            'teacherName',
+            'studentId',
+            'studentName',
+            'level',
+            'createdAt',
+            'updatedAt'
+          ])
+        && request.resource.data.sessionId == request.resource.data.lectureId
+        && validFeedbackLevel(request.resource.data.level)
+        && get(/databases/$(database)/documents/lectures/$(request.resource.data.lectureId))
+          .data.status == 'ended'
+        && get(/databases/$(database)/documents/lectures/$(request.resource.data.lectureId))
+          .data.courseId == request.resource.data.courseId
+        && get(/databases/$(database)/documents/lectures/$(request.resource.data.lectureId))
+          .data.teacherId == request.resource.data.teacherId;
+
+      allow update: if signedIn()
+        && resource.data.studentId == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['level', 'comment', 'studentName', 'studentEmail', 'memberId', 'updatedAt'])
+        && validFeedbackLevel(request.resource.data.level)
+        && get(/databases/$(database)/documents/lectures/$(resource.data.lectureId))
+          .data.status == 'ended';
+
+      allow delete: if false;
+    }
+
+    match /meetingRequests/{requestId} {
+      function isMeetingStudent() {
+        return resource.data.studentId == request.auth.uid;
+      }
+
+      function isMeetingTeacher() {
+        return resource.data.teacherId == request.auth.uid;
+      }
+
+      allow get: if signedIn() && (
+        !exists(/databases/$(database)/documents/meetingRequests/$(requestId))
+        || isMeetingStudent()
+        || isMeetingTeacher()
+      );
+      allow list: if signedIn() && (
+        resource.data.studentId == request.auth.uid
+        || resource.data.teacherId == request.auth.uid
+      );
+
+      allow create: if signedIn()
+        && request.resource.data.studentId == request.auth.uid
+        && request.resource.data.teacherId is string
+        && request.resource.data.teacherId.size() > 0
+        && request.resource.data.teacherId != request.auth.uid
+        && request.resource.data.courseId is string
+        && request.resource.data.courseId.size() > 0
+        && request.resource.data.courseName is string
+        && request.resource.data.topicTitle is string
+        && request.resource.data.topicTitle.size() > 0
+        && request.resource.data.reason is string
+        && request.resource.data.reason.size() > 0
+        && request.resource.data.reason.size() <= 1000
+        && request.resource.data.status == 'pending'
+        && request.resource.data.studentName is string
+        && request.resource.data.studentName.size() > 0
+        && get(/databases/$(database)/documents/users/$(request.auth.uid))
+          .data.connectedTeacherId == request.resource.data.teacherId
+        && get(/databases/$(database)/documents/courses/$(request.resource.data.courseId))
+          .data.teacherId == request.resource.data.teacherId;
+
+      allow update: if signedIn()
+        && request.resource.data.studentId == resource.data.studentId
+        && request.resource.data.teacherId == resource.data.teacherId
+        && request.resource.data.courseId == resource.data.courseId
+        && (
+          (
+            isMeetingTeacher()
+            && resource.data.status == 'pending'
+            && request.resource.data.status == 'accepted'
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['status', 'teacherNote', 'scheduledAt', 'respondedAt'])
+            && request.resource.data.scheduledAt is timestamp
+          )
+          || (
+            isMeetingTeacher()
+            && resource.data.status == 'pending'
+            && request.resource.data.status == 'declined'
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['status', 'teacherNote', 'scheduledAt', 'respondedAt'])
+          )
+          || (
+            isMeetingTeacher()
+            && resource.data.status == 'rescheduleRequested'
+            && request.resource.data.status == 'accepted'
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['status', 'teacherNote', 'scheduledAt', 'respondedAt'])
+            && request.resource.data.scheduledAt is timestamp
+          )
+          || (
+            isMeetingTeacher()
+            && resource.data.status == 'accepted'
+            && request.resource.data.status == 'completed'
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['status', 'completedAt'])
+            && resource.data.scheduledAt is timestamp
+            && request.time >= resource.data.scheduledAt
+          )
+          || (
+            isMeetingStudent()
+            && resource.data.status == 'accepted'
+            && request.resource.data.status == 'rescheduleRequested'
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['status', 'rescheduleNote', 'rescheduleRequestedAt'])
+          )
+        );
+
+      allow delete: if false;
+    }
+  }
+}
